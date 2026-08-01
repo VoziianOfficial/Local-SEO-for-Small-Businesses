@@ -1,0 +1,6 @@
+.aos-enabled [data-aos] { transition-property: transform, opacity; }
+.aos-enabled [data-aos="fade-up"] { opacity: 0; transform: translate3d(0, 24px, 0); }
+.aos-enabled [data-aos="fade-right"] { opacity: 0; transform: translate3d(-24px, 0, 0); }
+.aos-enabled [data-aos="fade-left"] { opacity: 0; transform: translate3d(24px, 0, 0); }
+.aos-enabled [data-aos].aos-animate { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { [data-aos] { opacity: 1; transform: none; transition: none; } }

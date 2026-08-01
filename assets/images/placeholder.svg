@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="placeholder-title placeholder-desc">
+  <title id="placeholder-title">Nearloom image placeholder</title>
+  <desc id="placeholder-desc">A neutral architectural placeholder for a future local business photograph.</desc>
+  <rect width="1600" height="1100" fill="#e5e8e2"/>
+  <rect x="100" y="100" width="1400" height="900" fill="#f3f4ef" stroke="#a7afa9" stroke-width="2"/>
+  <path d="M100 760h1400M420 100v900M1180 100v900" fill="none" stroke="#c8ccc6" stroke-width="2"/>
+  <rect x="420" y="760" width="760" height="240" fill="#171b19"/>
+  <circle cx="800" cy="430" r="92" fill="#d2d778"/>
+  <path d="M680 650h240" stroke="#242a27" stroke-width="8"/>
+  <text x="800" y="825" text-anchor="middle" fill="#f7f8f4" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">NEARLOOM</text>
+  <text x="800" y="875" text-anchor="middle" fill="#a7afa9" font-family="Arial, sans-serif" font-size="20" letter-spacing="3">FUTURE LOCAL BUSINESS PHOTOGRAPH</text>
+</svg>
