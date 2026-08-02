@@ -1353,27 +1353,32 @@ h3 {
 }
 
 .showcase__head {
-  max-width: 720px;
-  margin-bottom: clamp(40px, 5vw, 60px);
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto clamp(44px, 5.5vw, 68px);
+  text-align: center;
+}
+
+.showcase__head .eyebrow {
+  justify-content: center;
 }
 
 .showcase__head .lede {
-  margin-top: 16px;
+  margin: 16px auto 0;
 }
 
 .showcase__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 38px);
+  gap: clamp(28px, 3.5vw, 44px);
 }
 
 .showcase__card {
   display: flex;
   flex-direction: column;
-  border-radius: var(--radius-large);
+  border-radius: var(--radius-large) var(--radius-large) 0 var(--radius-large);
   background: var(--color-white);
   box-shadow: var(--shadow-subtle);
-  overflow: clip;
   transform: translateY(0);
   transition: transform 260ms ease, box-shadow 260ms ease;
 }
@@ -1386,29 +1391,64 @@ h3 {
 .showcase__frame {
   position: relative;
   height: clamp(210px, 22vw, 280px);
+}
+
+.showcase__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-large) var(--radius-large) 0 var(--radius-large);
   background: var(--color-mist);
 }
 
-.showcase__frame img {
+.showcase__media img {
   width: 100%;
   height: 100%;
   transition: transform 500ms ease;
 }
 
-.showcase__card:hover .showcase__frame img {
+.showcase__card:hover .showcase__media img {
   transform: scale(1.045);
+}
+
+.showcase__notch {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  z-index: 1;
+  width: 6rem;
+  height: 6rem;
+  background: var(--color-white);
+  border-top-left-radius: 50%;
+}
+
+.showcase__notch::before,
+.showcase__notch::after {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+}
+
+.showcase__notch::before {
+  bottom: 1px;
+  left: -1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem var(--color-white);
+}
+
+.showcase__notch::after {
+  top: -1.25rem;
+  right: 1px;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem var(--color-white);
 }
 
 .showcase__icon {
   position: absolute;
-  right: 18px;
-  bottom: -22px;
-  z-index: 1;
+  inset: 0.625rem;
   display: grid;
-  width: 52px;
-  height: 52px;
   place-items: center;
-  border: 4px solid var(--color-white);
   border-radius: 50%;
   background: var(--color-signal-blue);
   color: var(--color-black);
@@ -1424,12 +1464,12 @@ h3 {
 
 .showcase__icon svg,
 .showcase__icon i {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .showcase__body {
-  padding: 34px 26px 26px;
+  padding: 40px 26px 26px;
 }
 
 .showcase__body h3 {
@@ -1446,6 +1486,11 @@ h3 {
 @media (max-width: 640px) {
   .showcase__grid {
     grid-template-columns: 1fr;
+  }
+
+  .showcase__notch {
+    width: 5rem;
+    height: 5rem;
   }
 }
 
