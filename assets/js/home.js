@@ -170,6 +170,102 @@
     });
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const switcherSection = document.querySelector(".insight-switcher");
+
+    if (!switcherSection) return;
+
+
+    const tabs = switcherSection.querySelectorAll(".insight-switcher__tab");
+    const panels = switcherSection.querySelectorAll(".insight-switcher__content");
+
+    const activateTab = (targetId) => {
+      tabs.forEach((tab) => {
+        const isActive = tab.dataset.target === targetId;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle("is-active", isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        activateTab(tab.dataset.target);
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        const tabsArray = Array.from(tabs);
+        const currentIndex = tabsArray.indexOf(tab);
+        let nextIndex = currentIndex;
+
+        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+          nextIndex = (currentIndex + 1) % tabsArray.length;
+          event.preventDefault();
+        }
+
+        if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+          nextIndex = (currentIndex - 1 + tabsArray.length) % tabsArray.length;
+          event.preventDefault();
+        }
+
+        if (nextIndex !== currentIndex) {
+          tabsArray[nextIndex].focus();
+          activateTab(tabsArray[nextIndex].dataset.target);
+        }
+      });
+    });
+
+
+    const counters = switcherSection.querySelectorAll("[data-counter]");
+    let countersStarted = false;
+
+    const animateCounter = (element) => {
+      const target = Number(element.dataset.counter);
+      const duration = 1600;
+      const startTime = performance.now();
+
+      const step = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(target * eased);
+
+        element.textContent = currentValue.toLocaleString("en-US");
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          element.textContent = target.toLocaleString("en-US");
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !countersStarted) {
+            countersStarted = true;
+            counters.forEach(animateCounter);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.35
+      }
+    );
+
+    counterObserver.observe(switcherSection);
+  });
+
   function initHome() {
     if (document.documentElement.dataset.homeReady === "true") return;
     document.documentElement.dataset.homeReady = "true";
