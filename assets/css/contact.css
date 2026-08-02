@@ -483,6 +483,13 @@
     display: grid;
     grid-template-columns: minmax(260px, .65fr) minmax(0, 1.35fr);
     gap: clamp(50px, 8vw, 120px);
+    align-items: start;
+}
+
+.contact-faq__layout>div:first-child {
+    position: sticky;
+    top: 34px;
+    align-self: start;
 }
 
 @media (max-width: 991px) {
@@ -490,6 +497,10 @@
     .next-steps__head,
     .contact-faq__layout {
         grid-template-columns: 1fr;
+    }
+
+    .contact-faq__layout>div:first-child {
+        position: static;
     }
 
     .advertise-card__layout {
