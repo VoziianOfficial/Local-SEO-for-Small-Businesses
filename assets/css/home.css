@@ -190,7 +190,10 @@
   overflow: hidden;
   border: 1px solid var(--color-border-dark);
   border-radius: 13px;
-  background: var(--color-charcoal);
+  background-color: var(--color-charcoal);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--color-text-light);
   cursor: pointer;
   text-decoration: none;
@@ -206,9 +209,13 @@
 }
 
 .signal-stories .swiper-slide::before {
-  background: var(--color-graphite);
+  background-color: var(--color-graphite);
+  background-image: inherit;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   transform: scale(1.04);
-  transition: transform 700ms ease, background-color 700ms ease;
+  transition: transform 700ms ease, filter 700ms ease;
 }
 
 .signal-stories .swiper-slide::after {
@@ -216,22 +223,6 @@
   background: var(--signal-overlay);
   mix-blend-mode: multiply;
   transition: background-color 700ms ease;
-}
-
-.signal-stories .swiper-slide:nth-child(2n)::before {
-  background: #1d3137;
-}
-
-.signal-stories .swiper-slide:nth-child(3n)::before {
-  background: #202724;
-}
-
-.signal-stories .swiper-slide:nth-child(4n)::before {
-  background: #14252d;
-}
-
-.signal-stories .swiper-slide:nth-child(5n)::before {
-  background: #27383d;
 }
 
 .signal-stories__label {
@@ -262,7 +253,7 @@
 }
 
 .signal-stories .swiper-slide-active::before {
-  background: #24485a;
+  filter: saturate(1.05) contrast(1.04);
   transform: scale(1);
 }
 
