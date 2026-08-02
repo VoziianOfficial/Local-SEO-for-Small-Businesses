@@ -868,3 +868,297 @@
         font-size: 0.76rem;
     }
 }
+
+/* =========================================================
+   REQUEST SWIPER
+========================================================= */
+
+.request-swiper {
+    padding-block: clamp(54px, 7vw, 92px);
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.request-swiper .container {
+    width: min(calc(100% - (var(--page-gutter) * 2)), 1320px);
+}
+
+.request-swiper__head {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    margin-bottom: clamp(24px, 3vw, 36px);
+    text-align: center;
+}
+
+.request-swiper__title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+    white-space: nowrap;
+}
+
+.request-swiper__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.request-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.request-quote-card {
+    display: flex;
+    height: auto;
+}
+
+.request-quote-card__body {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: 330px;
+    grid-template-rows: 1fr auto;
+    align-items: stretch;
+    padding: 26px 28px 24px;
+    border: 1px solid rgba(17, 21, 19, 0.08);
+    border-radius: 40px;
+    background: rgba(210, 215, 120, 0.14);
+    box-shadow: 0 16px 38px rgba(12, 15, 14, 0.06);
+    overflow: hidden;
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+.request-quote-card__body::before {
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 0;
+    width: 5px;
+    border-radius: 0 999px 999px 0;
+    background: var(--color-accent);
+    content: "";
+}
+
+.request-quote-card__body::after {
+    position: absolute;
+    right: 26px;
+    bottom: 24px;
+    width: 42px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(127, 182, 201, 0.54);
+    content: "";
+}
+
+.request-quote-card__body:hover {
+    transform: translateY(-4px);
+    border-color: rgba(163, 169, 77, 0.24);
+    box-shadow: 0 24px 46px rgba(12, 15, 14, 0.1);
+}
+
+.request-quote-card__mark {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    color: rgba(17, 21, 19, 0.08);
+    font-family: var(--font-serif);
+    font-size: 7rem;
+    line-height: 0.8;
+    pointer-events: none;
+    user-select: none;
+}
+
+.request-quote-card__text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px 42px 16px 0;
+    color: var(--color-text);
+    font-size: clamp(1rem, 1.1vw, 1.08rem);
+    line-height: 1.78;
+}
+
+.request-quote-card__meta {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 6px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(17, 21, 19, 0.08);
+}
+
+.request-quote-card__type {
+    color: var(--color-accent-deep);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+.request-quote-card__name {
+    color: var(--color-text);
+    font-size: clamp(1.08rem, 1.4vw, 1.42rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.request-swiper__controls {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+    margin-top: 26px;
+}
+
+.request-swiper__arrow {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(17, 21, 19, 0.14);
+    border-radius: 999px;
+    background: var(--color-white);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.request-swiper__arrow:hover,
+.request-swiper__arrow:focus-visible {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.request-swiper__arrow span {
+    display: inline-grid;
+    place-items: center;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.request-swiper__arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.request-swiper__pagination {
+    display: flex;
+    width: auto !important;
+    gap: 8px;
+    align-items: center;
+}
+
+.request-swiper__pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0 !important;
+    border-radius: 999px;
+    background: rgba(17, 21, 19, 0.18);
+    opacity: 1;
+    transition:
+        width 180ms ease,
+        background-color 180ms ease;
+}
+
+.request-swiper__pagination .swiper-pagination-bullet-active {
+    width: 28px;
+    background: var(--color-accent-deep);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+    .request-swiper__title {
+        white-space: normal;
+    }
+
+    .request-quote-card__body {
+        min-height: 310px;
+        padding: 24px 24px 22px;
+        border-radius: 34px;
+    }
+
+    .request-quote-card__text {
+        padding-right: 28px;
+        line-height: 1.72;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+    .request-swiper {
+        padding-block: 40px 54px;
+    }
+
+    .request-swiper .container {
+        width: calc(100% - 28px);
+    }
+
+    .request-swiper__head {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .request-swiper__title {
+        font-size: clamp(1.75rem, 8.4vw, 2.5rem);
+        line-height: 1.02;
+    }
+
+    .request-quote-card__body {
+        min-height: 280px;
+        padding: 20px 20px 18px;
+        border-radius: 28px;
+    }
+
+    .request-quote-card__mark {
+        top: 14px;
+        right: 18px;
+        font-size: 5.5rem;
+    }
+
+    .request-quote-card__text {
+        padding: 8px 18px 14px 0;
+        font-size: 0.94rem;
+        line-height: 1.66;
+    }
+
+    .request-quote-card__meta {
+        margin-top: 18px;
+        padding-top: 14px;
+    }
+
+    .request-quote-card__name {
+        font-size: 1.1rem;
+    }
+
+    .request-swiper__controls {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .request-swiper__arrow {
+        width: 44px;
+        height: 44px;
+    }
+}

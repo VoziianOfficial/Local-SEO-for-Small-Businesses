@@ -1586,6 +1586,7 @@ h3 {
 
 .section.duo-cards {
   padding-top: clamp(43px, 5.5vw, 85px);
+  padding-bottom: clamp(43px, 5.5vw, 85px);
 }
 
 .duo-cards__list {
@@ -1692,6 +1693,7 @@ h3 {
 
 .showcase {
   padding-top: clamp(43px, 5.5vw, 85px);
+  padding-bottom: clamp(43px, 5.5vw, 85px);
 }
 
 .showcase__head {

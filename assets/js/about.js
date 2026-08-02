@@ -72,6 +72,56 @@
       });
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const requestSwiperElement = document.querySelector("[data-request-swiper]");
+
+    if (!requestSwiperElement || typeof Swiper === "undefined") return;
+
+    new Swiper(requestSwiperElement, {
+      loop: true,
+      speed: 700,
+      spaceBetween: 18,
+      grabCursor: true,
+      slidesPerView: 1,
+      centeredSlides: false,
+
+      autoplay: {
+        delay: 4200,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+
+      pagination: {
+        el: ".request-swiper__pagination",
+        clickable: true
+      },
+
+      navigation: {
+        nextEl: ".request-swiper__arrow--next",
+        prevEl: ".request-swiper__arrow--prev"
+      },
+
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 18
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 22
+        },
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        }
+      }
+    });
+  });
   function initAbout() {
     if (document.documentElement.dataset.aboutReady === "true") return;
     document.documentElement.dataset.aboutReady = "true";
