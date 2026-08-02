@@ -5,6 +5,7 @@
 .contact-hero .page-hero__inner {
     display: grid;
     justify-items: center;
+    transform: translateY(calc(-1 * clamp(34px, 4.5vw, 70px)));
 }
 
 .contact-hero .page-hero__title {
@@ -15,56 +16,10 @@
     margin: 30px auto 0;
 }
 
-.contact-routes {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: clamp(52px, 8vw, 96px);
-    border-top: 1px solid var(--color-border-dark);
-    border-left: 1px solid var(--color-border-dark);
-    text-align: left;
-}
-
-.contact-routes a {
-    display: flex;
-    min-height: 230px;
-    flex-direction: column;
-    padding: clamp(22px, 3vw, 36px);
-    border-right: 1px solid var(--color-border-dark);
-    border-bottom: 1px solid var(--color-border-dark);
-    text-decoration: none;
-    transition: background-color 180ms ease, color 180ms ease;
-}
-
-.contact-routes a:hover {
-    background: var(--color-accent);
-    color: var(--color-black);
-}
-
-.contact-routes a>span {
-    color: var(--color-accent);
-    font-size: .7rem;
-    font-weight: 800;
-}
-
-.contact-routes a:hover>span {
-    color: var(--color-black);
-}
-
-.contact-routes strong {
-    margin-top: auto;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    line-height: 1.2;
-}
-
-.contact-routes small {
-    margin-top: 14px;
-    color: var(--color-muted-dark);
-    line-height: 1.55;
-}
-
-.contact-routes a:hover small {
-    color: var(--color-graphite);
+@media (max-width: 767px) {
+    .contact-hero .page-hero__inner {
+        transform: translateY(-26px);
+    }
 }
 
 .advertise-section {
@@ -202,40 +157,63 @@
     position: relative;
     isolation: isolate;
     padding-block: clamp(42px, 5.5vw, 68px);
+
     background-color: var(--color-white);
     background-image: url("../images/about-parallax-workspace.png");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+    background-repeat: no-repeat;
+
+    /*
+     * ВАЖНО:
+     * overflow: hidden ломал position: sticky.
+     */
+    overflow: visible;
 }
 
 .contact-form-section::before {
     position: absolute;
     inset: 0;
-    z-index: -1;
-    background: rgba(247, 248, 244, .86);
+    z-index: 0;
+    background: rgba(247, 248, 244, 0.86);
     content: "";
+    pointer-events: none;
 }
 
 .contact-form-section__layout {
     position: relative;
+    z-index: 1;
+
     display: grid;
     max-width: 940px;
     grid-template-columns: 320px minmax(0, 1fr);
     gap: clamp(20px, 3vw, 32px);
     align-items: start;
+
+    margin-inline: auto;
     padding: clamp(18px, 2.4vw, 28px);
+
     border: 2px solid var(--color-accent-deep);
     border-radius: 24px;
     background: var(--color-white);
-    box-shadow: 0 24px 70px rgba(12, 15, 14, .14);
+    box-shadow: 0 24px 70px rgba(12, 15, 14, 0.14);
+
+    /*
+     * Родитель sticky-блока тоже не должен
+     * иметь overflow: hidden или auto.
+     */
+    overflow: visible;
 }
 
 .contact-form-section__lead {
     position: sticky;
     top: 28px;
+    z-index: 2;
+
+    align-self: start;
     width: min(100%, 320px);
+    height: fit-content;
     min-width: 0;
     padding: 2px 0;
 }
@@ -508,10 +486,6 @@
 }
 
 @media (max-width: 991px) {
-    .contact-routes {
-        grid-template-columns: 1fr;
-    }
-
     .contact-form-section__layout,
     .next-steps__head,
     .contact-faq__layout {
@@ -557,11 +531,6 @@
 }
 
 @media (max-width: 767px) {
-    .contact-routes a {
-        min-height: 190px;
-        text-align: center;
-    }
-
     .next-steps__head,
     .contact-faq__layout>div:first-child {
         text-align: center;
