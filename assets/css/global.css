@@ -1149,15 +1149,16 @@ h3 {
 
 .site-footer__top {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
-  gap: clamp(50px, 9vw, 140px);
-  padding-bottom: clamp(64px, 8vw, 100px);
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.6fr);
+  gap: clamp(36px, 7vw, 110px);
+  padding-bottom: clamp(44px, 6vw, 72px);
   border-bottom: 1px solid var(--color-border-dark);
 }
 
 .site-footer__headline {
-  max-width: 850px;
-  font-size: clamp(3rem, 6.8vw, 7.4rem);
+  max-width: 1080px;
+  font-size: clamp(3rem, 5.8vw, 6.6rem);
+  white-space: nowrap;
 }
 
 .site-footer__description {
@@ -1500,7 +1501,7 @@ h3 {
   }
 
   .site-footer__headline {
-    font-size: clamp(2.6rem, 14vw, 4rem);
+    font-size: clamp(2.25rem, 9vw, 3.25rem);
   }
 }
 

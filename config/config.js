@@ -55,7 +55,7 @@ window.SITE_CONFIG = {
     "text": "We are always open to new opportunities, high-impact collaborations, and tailored business partnerships. Whether you want to advertise your brand to our audience, launch a joint project, or book our professional services, we are ready to bring your ideas to life. Every business is unique, and we don't believe in one-size-fits-all solutions. Please reach out to us using the contact form below, tell us a bit about your goals, and our team will get back to you with an exclusive, custom-tailored proposal designed strictly for your budget and objectives. Let’s build something great together."
   },
   "footer": {
-    "headline": "Make every local signal count.",
+    "headline": "Local signals count.",
     "description": "Practical local search support for small businesses that want clearer profiles, stronger consistency, useful location content, and reporting tied to real actions.",
     "disclaimer": "Nearloom does not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.",
     "copyright": "© 2026 Nearloom Local Ltd. All rights reserved."
