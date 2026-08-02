@@ -13,44 +13,46 @@
 
     <section class="services-ticker section--mist" aria-label="Nearloom local service directory"><div class="services-ticker__track"><span>Google Business Profile</span><i aria-hidden="true"></i><span>Local Citations</span><i aria-hidden="true"></i><span>Review Growth</span><i aria-hidden="true"></i><span>Location Pages</span><i aria-hidden="true"></i><span>Local SEO Audit</span><i aria-hidden="true"></i><span>Performance Tracking</span></div></section>
 
-    <section class="service-deck section--dark" aria-label="Nearloom service cards" data-service-deck>
+    <section class="service-deck section section--white" id="service-deck" aria-label="Nearloom service cards" data-service-deck>
       <div class="service-deck__shell">
-        <button class="service-deck__nav service-deck__nav--prev" type="button" aria-label="Previous service" data-service-deck-prev>‹</button>
-        <div class="service-deck__swiper swiper" data-service-deck-swiper>
-          <div class="swiper-wrapper">
-            <article class="service-deck__card swiper-slide is-open" style="--service-photo: url('../images/service-profile-card.jpg');" aria-label="Google Business Profile service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Profile clarity</span><h3>GBP Profile</h3><p>Ownership, categories, services, photos, updates, and review response context aligned with the real business.</p><ul><li>Profile setup and access</li><li>Service and category clarity</li><li>Useful updates and photos</li></ul><a class="button button--light" href="google-business-profile.html"><span class="button__label">Open profile service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="true" aria-label="Toggle Google Business Profile card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-            <article class="service-deck__card swiper-slide" style="--service-photo: url('../images/service-citations-card.jpg');" aria-label="Local citations service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Data consistency</span><h3>Citations</h3><p>Names, addresses, phone numbers, links, categories, and duplicates reviewed across useful local listings.</p><ul><li>Approved source details</li><li>Conflict and duplicate review</li><li>Change record for listings</li></ul><a class="button button--light" href="local-citations.html"><span class="button__label">Open citation service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="false" aria-label="Toggle Local Citations card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-            <article class="service-deck__card swiper-slide" style="--service-photo: url('../images/service-reviews-card.jpg');" aria-label="Review growth service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Reputation rhythm</span><h3>Reviews</h3><p>Fair customer requests, thoughtful responses, and a realistic workflow without incentives or sentiment filtering.</p><ul><li>Ethical request path</li><li>Response habit support</li><li>No fake review promises</li></ul><a class="button button--light" href="review-growth.html"><span class="button__label">Open review service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="false" aria-label="Toggle Review Support card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-            <article class="service-deck__card swiper-slide" style="--service-photo: url('../images/service-location-pages-card.jpg');" aria-label="Location pages service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Place context</span><h3>Pages</h3><p>Useful service and place pages planned around genuine customer questions, internal links, and clear next actions.</p><ul><li>Real service detail</li><li>Location relevance</li><li>Contact path and links</li></ul><a class="button button--light" href="location-pages.html"><span class="button__label">Open page service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="false" aria-label="Toggle Location Pages card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-            <article class="service-deck__card swiper-slide" style="--service-photo: url('../images/service-audit-card.jpg');" aria-label="Local SEO audit service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Evidence first</span><h3>Audit</h3><p>Accuracy, completeness, consistency, content, and measurement reviewed before the work is prioritised.</p><ul><li>Full local picture</li><li>Impact and dependency</li><li>Plain action plan</li></ul><a class="button button--light" href="local-seo-audit.html"><span class="button__label">Open audit service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="false" aria-label="Toggle Local SEO Audit card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-            <article class="service-deck__card swiper-slide" style="--service-photo: url('../images/service-tracking-card.jpg');" aria-label="Performance tracking service">
-              <div class="service-deck__media" aria-hidden="true"></div>
-              <div class="service-deck__content"><span class="service-deck__type">Measured actions</span><h3>Tracking</h3><p>Profile interactions, website visits, calls, directions, and enquiries reported with clear definitions and limits.</p><ul><li>Customer action signals</li><li>Readable reporting</li><li>No invented success score</li></ul><a class="button button--light" href="performance-tracking.html"><span class="button__label">Open tracking service</span><span class="button__icon" aria-hidden="true">↗</span></a></div>
-              <button class="service-deck__toggle" type="button" aria-expanded="false" aria-label="Toggle Performance Tracking card" data-service-card-toggle><span aria-hidden="true"></span></button>
-            </article>
-          </div>
+        <div class="service-deck__options" role="list">
+          <article class="service-deck__card is-open" style="--service-photo: none;" aria-label="Google Business Profile service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="true" aria-label="Open Google Business Profile card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">G</span><span class="service-deck__info"><span class="service-deck__title">GBP Profile</span><span class="service-deck__subtitle">Profile clarity</span></span></button>
+            <a class="service-deck__link" href="google-business-profile.html" aria-label="Open Google Business Profile service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="service-deck__card" style="--service-photo: none;" aria-label="Local citations service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="false" aria-label="Open Local Citations card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">C</span><span class="service-deck__info"><span class="service-deck__title">Citations</span><span class="service-deck__subtitle">Data consistency</span></span></button>
+            <a class="service-deck__link" href="local-citations.html" aria-label="Open Local Citations service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="service-deck__card" style="--service-photo: none;" aria-label="Review growth service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="false" aria-label="Open Review Support card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">R</span><span class="service-deck__info"><span class="service-deck__title">Reviews</span><span class="service-deck__subtitle">Reputation rhythm</span></span></button>
+            <a class="service-deck__link" href="review-growth.html" aria-label="Open Review Support service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="service-deck__card" style="--service-photo: none;" aria-label="Location pages service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="false" aria-label="Open Location Pages card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">P</span><span class="service-deck__info"><span class="service-deck__title">Pages</span><span class="service-deck__subtitle">Place context</span></span></button>
+            <a class="service-deck__link" href="location-pages.html" aria-label="Open Location Pages service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="service-deck__card" style="--service-photo: none;" aria-label="Local SEO audit service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="false" aria-label="Open Local SEO Audit card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">A</span><span class="service-deck__info"><span class="service-deck__title">Audit</span><span class="service-deck__subtitle">Evidence first</span></span></button>
+            <a class="service-deck__link" href="local-seo-audit.html" aria-label="Open Local SEO Audit service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="service-deck__card" style="--service-photo: none;" aria-label="Performance tracking service">
+            <div class="service-deck__media" aria-hidden="true"></div>
+            <div class="service-deck__shade" aria-hidden="true"></div>
+            <button class="service-deck__label" type="button" aria-expanded="false" aria-label="Open Performance Tracking card" data-service-card-toggle><span class="service-deck__icon" aria-hidden="true">T</span><span class="service-deck__info"><span class="service-deck__title">Tracking</span><span class="service-deck__subtitle">Measured actions</span></span></button>
+            <a class="service-deck__link" href="performance-tracking.html" aria-label="Open Performance Tracking service"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </article>
         </div>
-        <button class="service-deck__nav service-deck__nav--next" type="button" aria-label="Next service" data-service-deck-next>›</button>
       </div>
     </section>
 

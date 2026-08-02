@@ -148,21 +148,9 @@
     document.querySelectorAll("[data-service-deck]").forEach(function (deck) {
       if (deck.dataset.serviceDeckReady === "true") return;
       deck.dataset.serviceDeckReady = "true";
-      var swiperElement = deck.querySelector("[data-service-deck-swiper]");
-      var prev = deck.querySelector("[data-service-deck-prev]");
-      var next = deck.querySelector("[data-service-deck-next]");
       var cards = [].slice.call(deck.querySelectorAll(".service-deck__card"));
-      var swiper = null;
       var activeIndex = Math.max(0, cards.findIndex(function (card) { return card.classList.contains("is-open"); }));
       if (!cards.length) return;
-
-      function updateSwiper() {
-        if (!swiper || typeof swiper.update !== "function") return;
-        window.setTimeout(function () {
-          swiper.update();
-          if (typeof swiper.updateSlides === "function") swiper.updateSlides();
-        }, reduceMotion.matches ? 0 : 820);
-      }
 
       function setCard(card, open) {
         var toggle = card.querySelector("[data-service-card-toggle]");
@@ -170,19 +158,10 @@
         if (toggle) toggle.setAttribute("aria-expanded", String(open));
       }
 
-      function openCard(card, shouldCenter) {
+      function openCard(card) {
         activeIndex = cards.indexOf(card);
         if (activeIndex < 0) activeIndex = 0;
         cards.forEach(function (item) { setCard(item, item === card); });
-        if (shouldCenter && swiper && typeof swiper.slideTo === "function") {
-          swiper.slideTo(activeIndex, reduceMotion.matches ? 0 : 760);
-        }
-        updateSwiper();
-      }
-
-      function closeCard(card) {
-        setCard(card, false);
-        updateSwiper();
       }
 
       cards.forEach(function (card) {
@@ -191,32 +170,20 @@
           toggle.addEventListener("click", function (event) {
             event.preventDefault();
             event.stopPropagation();
-            card.classList.contains("is-open") ? closeCard(card) : openCard(card, true);
+            openCard(card);
           });
         }
         card.addEventListener("click", function (event) {
           if (event.target.closest("a, button")) return;
-          if (!card.classList.contains("is-open")) openCard(card, true);
+          openCard(card);
         });
       });
 
       function stepCards(direction) {
         var nextIndex = (activeIndex + direction + cards.length) % cards.length;
-        openCard(cards[nextIndex], true);
-      }
-
-      if (prev) {
-        prev.addEventListener("click", function (event) {
-          event.preventDefault();
-          stepCards(-1);
-        });
-      }
-
-      if (next) {
-        next.addEventListener("click", function (event) {
-          event.preventDefault();
-          stepCards(1);
-        });
+        openCard(cards[nextIndex]);
+        var toggle = cards[nextIndex].querySelector("[data-service-card-toggle]");
+        if (toggle) toggle.focus({ preventScroll: true });
       }
 
       deck.addEventListener("keydown", function (event) {
@@ -230,37 +197,9 @@
           stepCards(1);
           return;
         }
-        if (event.key !== "Escape") return;
-        cards.forEach(function (card) { setCard(card, false); });
-        updateSwiper();
       });
 
-      if (window.Swiper && swiperElement) {
-        swiper = new window.Swiper(swiperElement, {
-          speed: 760,
-          slidesPerView: "auto",
-          centeredSlides: true,
-          spaceBetween: 16,
-          grabCursor: true,
-          keyboard: { enabled: true, onlyInViewport: true },
-          observer: true,
-          observeParents: true,
-          breakpoints: {
-            768: { spaceBetween: 18 },
-            1200: { spaceBetween: 20 }
-          },
-          a11y: { enabled: true }
-        });
-        if (typeof swiper.on === "function") {
-          swiper.on("slideChangeTransitionEnd", function () {
-            var index = typeof swiper.activeIndex === "number" ? swiper.activeIndex : activeIndex;
-            if (cards[index] && index !== activeIndex) openCard(cards[index], false);
-          });
-        }
-        swiperElement.dataset.swiperReady = "true";
-      } else if (swiperElement) {
-        swiperElement.style.overflowX = "auto";
-      }
+      openCard(cards[activeIndex]);
     });
   }
 
