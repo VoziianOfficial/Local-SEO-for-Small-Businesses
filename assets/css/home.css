@@ -1,7 +1,7 @@
 .particle-hero {
   position: relative;
   display: grid;
-  min-height: 100svh;
+  min-height: 86svh;
   overflow: clip;
   background: var(--color-black);
   color: var(--color-text-light);
@@ -19,21 +19,13 @@
 .particle-hero__inner {
   display: grid;
   width: 100%;
-  min-height: 100svh;
-  grid-template-columns: minmax(180px, 0.45fr) minmax(0, 1.55fr);
-  grid-template-rows: 1fr auto;
-  gap: clamp(30px, 5vw, 80px);
+  min-height: 86svh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto 1fr auto;
+  gap: clamp(24px, 4vw, 56px);
+  justify-items: center;
   align-items: center;
-  padding: clamp(80px, 9vw, 130px) var(--page-gutter) 44px;
-}
-
-.particle-hero__intro {
-  align-self: center;
-  max-width: 350px;
-}
-
-.particle-hero__intro p {
-  color: var(--color-muted-dark);
+  padding: clamp(72px, 8vw, 116px) var(--page-gutter) 34px;
 }
 
 .particle-hero__title {
@@ -42,7 +34,8 @@
   max-width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  justify-self: end;
+  grid-row: 2;
+  justify-self: center;
   font-size: clamp(3.5rem, 8vw, 9rem);
   line-height: 0.84;
   text-transform: uppercase;
@@ -72,20 +65,10 @@
 
 .particle-hero__actions {
   display: flex;
-  grid-column: 2;
+  grid-row: 3;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 28px;
-}
-
-.particle-hero__note {
-  max-width: 250px;
-  margin: 0;
-  color: var(--color-muted-dark);
-  font-size: 0.73rem;
-  letter-spacing: 0.08em;
-  line-height: 1.6;
-  text-transform: uppercase;
 }
 
 .particle-hero__scroll {
@@ -652,19 +635,6 @@
 }
 
 @media (max-width: 1199px) {
-  .particle-hero__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .particle-hero__intro {
-    display: none;
-  }
-
-  .particle-hero__title,
-  .particle-hero__actions {
-    grid-column: 1;
-  }
-
   .particle-hero__title {
     justify-self: center;
   }
@@ -685,7 +655,7 @@
 @media (max-width: 991px) {
   .particle-hero,
   .particle-hero__inner {
-    min-height: calc(100svh - var(--mobile-header-height));
+    min-height: calc(88svh - var(--mobile-header-height));
   }
 
   .home-intro__grid,
@@ -745,11 +715,6 @@
   .particle-hero__actions {
     width: min(100%, 420px);
     flex-direction: column;
-  }
-
-  .particle-hero__note {
-    max-width: 330px;
-    text-align: center;
   }
 
   .particle-hero__scroll {
