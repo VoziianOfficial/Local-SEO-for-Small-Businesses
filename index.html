@@ -177,35 +177,56 @@
       
 
       <section class="method-section section--paper" aria-labelledby="method-title">
+        <canvas class="method-section__canvas" data-particle-canvas data-particle-theme="light" aria-hidden="true"></canvas>
         <div class="container">
-          <div class="method-section__head">
-            <span class="eyebrow">A visible working method</span>
-            <h2 id="method-title">Find the <span class="editorial-word">next step.</span></h2>
-          </div>
-          <div class="method-switcher" data-method-switcher>
-            <div class="method-switcher__tabs" role="tablist" aria-label="Local SEO process">
-              <button type="button" role="tab" id="method-tab-audit" aria-controls="method-panel-audit" aria-selected="true" tabindex="0"><span>01</span>Audit</button>
-              <button type="button" role="tab" id="method-tab-align" aria-controls="method-panel-align" aria-selected="false" tabindex="-1"><span>02</span>Align</button>
-              <button type="button" role="tab" id="method-tab-improve" aria-controls="method-panel-improve" aria-selected="false" tabindex="-1"><span>03</span>Improve</button>
-              <button type="button" role="tab" id="method-tab-track" aria-controls="method-panel-track" aria-selected="false" tabindex="-1"><span>04</span>Track</button>
+          <div class="method-hero">
+            <div class="method-hero__content" data-aos="fade-up">
+              <span class="eyebrow">A visible working method</span>
+              <h2 id="method-title">Find the <span class="editorial-word">next step.</span></h2>
+              <p class="lede">Local visibility moves in a deliberate order: see what's actually there, align the details, improve what customers use, then track what changed.</p>
+              <div class="method-hero__tabs" role="tablist" aria-label="Local SEO process" data-method-switcher>
+                <button type="button" role="tab" id="method-tab-audit" aria-controls="method-panel-audit" aria-selected="true" tabindex="0">Audit</button>
+                <button type="button" role="tab" id="method-tab-align" aria-controls="method-panel-align" aria-selected="false" tabindex="-1">Align</button>
+                <button type="button" role="tab" id="method-tab-improve" aria-controls="method-panel-improve" aria-selected="false" tabindex="-1">Improve</button>
+                <button type="button" role="tab" id="method-tab-track" aria-controls="method-panel-track" aria-selected="false" tabindex="-1">Track</button>
+              </div>
+              <a class="button button--editorial" href="about.html">
+                <span class="button__label">See the full method</span>
+                <span class="button__icon" aria-hidden="true">→</span>
+              </a>
             </div>
-            <div class="method-switcher__panels">
-              <article class="method-panel" role="tabpanel" id="method-panel-audit" aria-labelledby="method-tab-audit">
-                <figure><!-- Replace with assets/images/method-audit.jpg --><img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Local search information being reviewed for accuracy"></figure>
-                <div><span class="method-panel__progress">01 / 04</span><h3>See the full local picture.</h3><p>Review the profile, website, directories, reviews, and existing measurement before deciding what deserves attention.</p><ul><li>Check business details and categories</li><li>Find gaps, conflicts, and incomplete signals</li><li>Separate urgent fixes from longer-term work</li></ul></div>
-              </article>
-              <article class="method-panel" role="tabpanel" id="method-panel-align" aria-labelledby="method-tab-align" hidden>
-                <figure><!-- Replace with assets/images/method-align.jpg --><img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Business details aligned across local search channels"></figure>
-                <div><span class="method-panel__progress">02 / 04</span><h3>Make the details agree.</h3><p>Clarify the source information and align the business name, address, website, categories, services, and service-area context.</p><ul><li>Confirm the approved business data</li><li>Remove preventable inconsistencies</li><li>Define clear ownership for future changes</li></ul></div>
-              </article>
-              <article class="method-panel" role="tabpanel" id="method-panel-improve" aria-labelledby="method-tab-improve" hidden>
-                <figure><!-- Replace with assets/images/method-improve.jpg --><img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Useful business profile and location content being improved"></figure>
-                <div><span class="method-panel__progress">03 / 04</span><h3>Improve what customers can use.</h3><p>Strengthen profile completeness, review workflows, directory presence, and helpful local pages in a deliberate order.</p><ul><li>Prioritise visible customer information</li><li>Write for genuine local intent</li><li>Avoid duplication and spam-led tactics</li></ul></div>
-              </article>
-              <article class="method-panel" role="tabpanel" id="method-panel-track" aria-labelledby="method-tab-track" hidden>
-                <figure><!-- Replace with assets/images/method-track.jpg --><img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Local performance actions reviewed in a clear report"></figure>
-                <div><span class="method-panel__progress">04 / 04</span><h3>Observe actions, not isolated positions.</h3><p>Use listing, website, call, direction, and enquiry activity to understand what changed and which next action is justified.</p><ul><li>Keep reporting labels understandable</li><li>Compare meaningful periods carefully</li><li>Account for location and device variation</li></ul></div>
-              </article>
+
+            <div class="method-card" data-method-card data-aos="fade-left">
+              <div class="method-card__stage" data-method-cube>
+                <article class="method-panel" role="tabpanel" id="method-panel-audit" aria-labelledby="method-tab-audit">
+                  <div class="method-panel__overlay">
+                    <h3>See the full local picture.</h3>
+                    <p>Review the profile, website, directories, reviews, and existing measurement before deciding what deserves attention.</p>
+                    <ul><li>Check business details and categories</li><li>Find gaps, conflicts, and incomplete signals</li><li>Separate urgent fixes from longer-term work</li></ul>
+                  </div>
+                </article>
+                <article class="method-panel" role="tabpanel" id="method-panel-align" aria-labelledby="method-tab-align" aria-hidden="true" inert>
+                  <div class="method-panel__overlay">
+                    <h3>Make the details agree.</h3>
+                    <p>Clarify the source information and align the business name, address, website, categories, services, and service-area context.</p>
+                    <ul><li>Confirm the approved business data</li><li>Remove preventable inconsistencies</li><li>Define clear ownership for future changes</li></ul>
+                  </div>
+                </article>
+                <article class="method-panel" role="tabpanel" id="method-panel-improve" aria-labelledby="method-tab-improve" aria-hidden="true" inert>
+                  <div class="method-panel__overlay">
+                    <h3>Improve what customers can use.</h3>
+                    <p>Strengthen profile completeness, review workflows, directory presence, and helpful local pages in a deliberate order.</p>
+                    <ul><li>Prioritise visible customer information</li><li>Write for genuine local intent</li><li>Avoid duplication and spam-led tactics</li></ul>
+                  </div>
+                </article>
+                <article class="method-panel" role="tabpanel" id="method-panel-track" aria-labelledby="method-tab-track" aria-hidden="true" inert>
+                  <div class="method-panel__overlay">
+                    <h3>Observe actions, not isolated positions.</h3>
+                    <p>Use listing, website, call, direction, and enquiry activity to understand what changed and which next action is justified.</p>
+                    <ul><li>Keep reporting labels understandable</li><li>Compare meaningful periods carefully</li><li>Account for location and device variation</li></ul>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>

@@ -155,7 +155,11 @@
           var panel = document.getElementById(item.getAttribute("aria-controls"));
           item.setAttribute("aria-selected", String(selected));
           item.tabIndex = selected ? 0 : -1;
-          if (panel) panel.hidden = !selected;
+          if (panel) {
+            panel.setAttribute("aria-hidden", String(!selected));
+            if (selected) panel.removeAttribute("inert");
+            else panel.setAttribute("inert", "");
+          }
         });
         if (moveFocus) tab.focus();
       }
@@ -240,6 +244,11 @@
     document.querySelectorAll("[data-particle-canvas]").forEach(function (canvas) {
       if (canvas.dataset.particlesReady === "true") return;
       canvas.dataset.particlesReady = "true";
+      var light = canvas.dataset.particleTheme === "light";
+      var accentColor = light ? "#a3a94d" : "#d2d778";
+      var dotColor = light ? "rgba(17,21,19,.22)" : "rgba(247,248,244,.74)";
+      var lineRgb = light ? "17,21,19" : "229,232,226";
+      var lineAlpha = light ? 0.09 : 0.16;
       var context = canvas.getContext("2d");
       var host = canvas.parentElement;
       var points = [];
@@ -288,7 +297,7 @@
           }
           context.beginPath();
           context.arc(point.x, point.y, point.accent ? 1.8 : 1.25, 0, Math.PI * 2);
-          context.fillStyle = point.accent ? "#d2d778" : "rgba(247,248,244,.74)";
+          context.fillStyle = point.accent ? accentColor : dotColor;
           context.fill();
           for (var next = index + 1; next < points.length; next += 1) {
             var other = points[next];
@@ -297,7 +306,7 @@
             context.beginPath();
             context.moveTo(point.x, point.y);
             context.lineTo(other.x, other.y);
-            context.strokeStyle = "rgba(229,232,226," + ((1 - lineDistance / 118) * 0.16) + ")";
+            context.strokeStyle = "rgba(" + lineRgb + "," + ((1 - lineDistance / 118) * lineAlpha) + ")";
             context.lineWidth = 0.6;
             context.stroke();
           }
