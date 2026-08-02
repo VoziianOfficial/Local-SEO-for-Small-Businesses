@@ -1146,6 +1146,20 @@ h3 {
   margin-bottom: clamp(40px, 5vw, 60px);
 }
 
+.about-page .duo-cards__head,
+.service-page .duo-cards__head {
+  max-width: min(100%, 1120px);
+}
+
+.about-page .duo-cards__head h2,
+.service-page .duo-cards__head h2 {
+  white-space: nowrap;
+}
+
+.section.duo-cards {
+  padding-top: clamp(43px, 5.5vw, 85px);
+}
+
 .duo-cards__list {
   display: grid;
   gap: clamp(26px, 3.5vw, 40px);
@@ -1156,10 +1170,18 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: stretch;
+  border: 1px solid rgba(17, 21, 19, 0.12);
   border-radius: var(--radius-small);
   background: var(--color-paper);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: 0 24px 58px rgba(12, 15, 14, 0.16), 0 2px 0 rgba(255, 255, 255, 0.86) inset;
   overflow: clip;
+  transform: translateY(0);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+.duo-card:hover {
+  box-shadow: 0 34px 76px rgba(12, 15, 14, 0.2), 0 2px 0 rgba(255, 255, 255, 0.92) inset;
+  transform: translateY(-4px);
 }
 
 .duo-card--reverse {
@@ -1176,6 +1198,7 @@ h3 {
   margin: 0;
   min-height: 320px;
   background: var(--color-mist);
+  box-shadow: 0 0 0 1px rgba(17, 21, 19, 0.08) inset;
 }
 
 .duo-card__media img {
@@ -1538,6 +1561,11 @@ h3 {
   .duo-cards__head {
     margin-inline: auto;
     text-align: center;
+  }
+
+  .about-page .duo-cards__head h2,
+  .service-page .duo-cards__head h2 {
+    white-space: normal;
   }
 
   .duo-card__body {
