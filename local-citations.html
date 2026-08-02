@@ -1,33 +1,414 @@
-<!doctype html><html lang="en"><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Local Directory & Citation Management | Nearloom</title><meta name="description" content="Improve consistency across relevant local directories by aligning business name, address, website, and category information."><link rel="canonical" href="https://nearloomlocal.com/local-citations.html"><meta property="og:type" content="website"><meta property="og:title" content="Local Directory & Citation Management | Nearloom"><meta property="og:description" content="Build clearer directory consistency from one approved source of business information."><meta property="og:image" content="https://nearloomlocal.com/assets/images/placeholder.svg"><meta property="og:url" content="https://nearloomlocal.com/local-citations.html"><link rel="icon" href="assets/images/favicon.svg?v=2" type="image/svg+xml"><link rel="stylesheet" href="assets/vendor/aos/aos.css"><link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="assets/css/service-detail.css"><script type="application/ld+json" data-organization-json>{}</script><script defer src="config/config.js"></script><script defer src="assets/vendor/aos/aos.js"></script><script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script><script defer src="assets/vendor/lucide/lucide.js"></script><script defer src="assets/js/config-render.js"></script><script defer src="assets/js/app.js"></script><script defer src="assets/js/service-detail.js"></script>
-</head><body class="service-page service--citations" data-nav-section="services.html">
-  <a class="skip-link" href="#main-content">Skip to main content</a><aside class="site-sidebar" aria-label="Primary navigation"><a class="brand" href="index.html" aria-label="Nearloom main page"><span class="brand__name" data-config="brand.name">Nearloom</span><span class="brand__descriptor" data-config="brand.studioLabel">Local Search Studio</span></a><nav class="sidebar-nav" aria-label="Main navigation"><ul><li><a href="index.html" data-nav-index="0">Main</a></li><li><a href="about.html" data-nav-index="1">Our Method</a></li><li><a href="services.html" data-nav-index="2" aria-current="page">Local Services</a></li><li><a href="industries.html" data-nav-index="3">Business Types</a></li><li><a href="insights.html" data-nav-index="4">Field Notes</a></li><li><a href="contact.html" data-nav-index="5">Start Here</a></li></ul></nav><div class="site-sidebar__bottom"><p>Local visibility, measured clearly.</p><a href="contact.html" data-config-email>Contact email</a><address data-config="contact.address">Business address</address><a class="sidebar-start" href="contact.html">Start Here</a></div></aside>
-  <header class="mobile-header"><a class="brand" href="index.html" aria-label="Nearloom main page"><span class="brand__name" data-config="brand.name">Nearloom</span></a><button class="menu-toggle" type="button" data-menu-open aria-expanded="false" aria-controls="mobile-menu"><span class="menu-toggle__lines" aria-hidden="true"></span><span>Menu</span></button></header><div class="mobile-menu" id="mobile-menu" data-mobile-menu data-open="false" aria-hidden="true" inert><button class="mobile-menu__close" type="button" data-menu-close>Close</button><div class="mobile-menu__inner"><nav aria-label="Mobile navigation"><ul class="mobile-menu__links"><li><a href="index.html" data-nav-index="0">Main</a></li><li><a href="about.html" data-nav-index="1">Our Method</a></li><li><a href="services.html" data-nav-index="2" aria-current="page">Local Services</a></li><li><a href="industries.html" data-nav-index="3">Business Types</a></li><li><a href="insights.html" data-nav-index="4">Field Notes</a></li><li><a href="contact.html" data-nav-index="5">Start Here</a></li></ul></nav><div class="mobile-menu__meta"><a href="contact.html" data-config-email>Contact email</a><address data-config="contact.address">Business address</address></div></div></div>
-  <div class="site-shell"><main id="main-content">
-    <section class="page-hero service-hero" aria-labelledby="service-title"><canvas class="page-hero__canvas" data-particle-canvas aria-hidden="true"></canvas><div class="service-hero__inner"><div class="service-hero__copy"><span class="eyebrow">Local service / 02</span><h1 id="service-title">Citation <span class="editorial-word">cleanup.</span></h1><p class="lede">Align the business details that appear across relevant directories, reduce avoidable conflicts, and create a more manageable source of truth.</p><div class="service-hero__meta"><span>Directory relevance</span><span>Data consistency</span><span>No phone required</span></div></div><figure class="service-hero__media"><!-- Replace with assets/images/service-citations-hero.jpg --><img src="assets/images/placeholder.svg" width="980" height="1200" decoding="async" alt="Consistent business information connected across relevant local directories"></figure></div></section>
+<!doctype html>
+<html lang="en">
 
-    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Directory & Citation Management | Nearloom</title>
+  <meta name="description"
+    content="Improve consistency across relevant local directories by aligning business name, address, website, and category information.">
+  <link rel="canonical" href="https://nearloomlocal.com/local-citations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Local Directory & Citation Management | Nearloom">
+  <meta property="og:description"
+    content="Build clearer directory consistency from one approved source of business information.">
+  <meta property="og:image" content="https://nearloomlocal.com/assets/images/placeholder.svg">
+  <meta property="og:url" content="https://nearloomlocal.com/local-citations.html">
+  <link rel="icon" href="assets/images/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/service-detail.css">
+  <script type="application/ld+json" data-organization-json>{}</script>
+  <script defer src="config/config.js"></script>
+  <script defer src="assets/vendor/aos/aos.js"></script>
+  <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script defer src="assets/vendor/lucide/lucide.js"></script>
+  <script defer src="assets/js/config-render.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/service-detail.js"></script>
+</head>
 
-    
+<body class="service-page service--citations" data-nav-section="services.html">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="site-sidebar" aria-label="Primary navigation"><a class="brand" href="index.html"
+      aria-label="Nearloom main page"><span class="brand__name" data-config="brand.name">Nearloom</span><span
+        class="brand__descriptor" data-config="brand.studioLabel">Local Search Studio</span></a>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" data-nav-index="0">Main</a></li>
+        <li><a href="about.html" data-nav-index="1">Our Method</a></li>
+        <li><a href="services.html" data-nav-index="2" aria-current="page">Local Services</a></li>
+        <li><a href="industries.html" data-nav-index="3">Business Types</a></li>
+        <li><a href="insights.html" data-nav-index="4">Field Notes</a></li>
+        <li><a href="contact.html" data-nav-index="5">Start Here</a></li>
+      </ul>
+    </nav>
+    <div class="site-sidebar__bottom">
+      <p>Local visibility, measured clearly.</p><a href="contact.html" data-config-email>Contact email</a>
+      <address data-config="contact.address">Business address</address><a class="sidebar-start"
+        href="contact.html">Start Here</a>
+    </div>
+  </aside>
+  <header class="mobile-header"><a class="brand" href="index.html" aria-label="Nearloom main page"><span
+        class="brand__name" data-config="brand.name">Nearloom</span></a><button class="menu-toggle" type="button"
+      data-menu-open aria-expanded="false" aria-controls="mobile-menu"><span class="menu-toggle__lines"
+        aria-hidden="true"></span><span>Menu</span></button></header>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu data-open="false" aria-hidden="true" inert><button
+      class="mobile-menu__close" type="button" data-menu-close>Close</button>
+    <div class="mobile-menu__inner">
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-menu__links">
+          <li><a href="index.html" data-nav-index="0">Main</a></li>
+          <li><a href="about.html" data-nav-index="1">Our Method</a></li>
+          <li><a href="services.html" data-nav-index="2" aria-current="page">Local Services</a></li>
+          <li><a href="industries.html" data-nav-index="3">Business Types</a></li>
+          <li><a href="insights.html" data-nav-index="4">Field Notes</a></li>
+          <li><a href="contact.html" data-nav-index="5">Start Here</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__meta"><a href="contact.html" data-config-email>Contact email</a>
+        <address data-config="contact.address">Business address</address>
+      </div>
+    </div>
+  </div>
+  <div class="site-shell">
+    <main id="main-content">
+      <section class="page-hero service-hero" aria-labelledby="service-title"><canvas class="page-hero__canvas"
+          data-particle-canvas aria-hidden="true"></canvas>
+        <div class="service-hero__inner">
+          <div class="service-hero__copy"><span class="eyebrow">Local service / 02</span>
+            <h1 id="service-title">Citation <span class="editorial-word">cleanup.</span></h1>
+            <p class="lede">Align the business details that appear across relevant directories, reduce avoidable
+              conflicts, and create a more manageable source of truth.</p>
+            <div class="service-hero__meta"><span>Directory relevance</span><span>Data consistency</span><span>No phone
+                required</span></div>
+          </div>
+          <figure class="service-hero__media"><!-- Replace with assets/images/service-citations-hero.jpg --><img
+              src="assets/images/placeholder.svg" width="980" height="1200" decoding="async"
+              alt="Consistent business information connected across relevant local directories"></figure>
+        </div>
+      </section>
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <section class="showcase section section--paper" aria-labelledby="citations-showcase-title"><div class="container"><div class="showcase__head" data-aos="fade-up"><span class="eyebrow">Where inconsistencies hide</span><h2 id="citations-showcase-title">Four places NAP details quietly drift.</h2><p class="lede">Small mismatches accumulate in predictable places. Finding them is most of the work.</p></div><div class="showcase__grid"><article class="showcase__card" data-aos="fade-up"><div class="showcase__frame"><div class="showcase__media"><!-- Replace with assets/images/citations-showcase-legacy.jpg --><img src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async" alt="An outdated directory listing created years earlier"></div><div class="showcase__notch"><a class="showcase__icon" href="local-seo-audit.html" aria-label="See the local SEO audit"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div><div class="showcase__body"><h3>Legacy Directory Listings</h3><p>Old directories set up years ago often outlive whoever created them, still showing outdated information.</p></div></article><article class="showcase__card" data-aos="fade-up"><div class="showcase__frame"><div class="showcase__media"><!-- Replace with assets/images/citations-showcase-move.jpg --><img src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async" alt="A business address updated after relocating to a new location"></div><div class="showcase__notch"><a class="showcase__icon" href="google-business-profile.html" aria-label="See profile setup"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div><div class="showcase__body"><h3>Addresses After a Move</h3><p>A relocation rarely updates every listing at once, leaving customers directions to a business that isn't there anymore.</p></div></article><article class="showcase__card" data-aos="fade-up"><div class="showcase__frame"><div class="showcase__media"><!-- Replace with assets/images/citations-showcase-duplicate.jpg --><img src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async" alt="Two duplicate listings found for the same business location"></div><div class="showcase__notch"><a class="showcase__icon" href="contact.html#contact-form" aria-label="Request citation support"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div><div class="showcase__body"><h3>Duplicate Profile Entries</h3><p>Two records for the same location split reviews, confuse platforms, and dilute an otherwise strong presence.</p></div></article><article class="showcase__card" data-aos="fade-up"><div class="showcase__frame"><div class="showcase__media"><!-- Replace with assets/images/citations-showcase-feeds.jpg --><img src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async" alt="Shared data feeds used by multiple local directories"></div><div class="showcase__notch"><a class="showcase__icon" href="services.html" aria-label="Review local services"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div><div class="showcase__body"><h3>Data Aggregator Feeds</h3><p>Some directories pull from shared data sources, so one incorrect feed can quietly reintroduce an old mistake.</p></div></article></div></div></section>
 
-    <section class="section section--white duo-cards" aria-labelledby="duo-cards-title"><div class="container"><div class="duo-cards__head" data-aos="fade-up"><span class="eyebrow">Two consistency priorities</span><h2 id="duo-cards-title">One address, <span class="editorial-word">everywhere.</span></h2></div><div class="duo-cards__list"><article class="duo-card" data-aos="fade-up"><figure class="duo-card__media"><!-- Replace with assets/images/service-citations-source.jpg --><img src="assets/images/placeholder.svg" width="900" height="700" loading="lazy" decoding="async" alt="One approved business name, address, and phone number confirmed before any directory update"><figcaption class="media-label">Confirm the source first.</figcaption></figure><div class="duo-card__body"><span class="duo-card__index">01</span><h3>A Single Source of Truth</h3><p class="duo-card__kicker">Name · address · phone</p><p>Conflicting listings confuse both customers and search platforms. Nearloom confirms one approved version of the business name, address, and phone number before touching a single directory.</p><a class="button button--editorial duo-card__more" href="google-business-profile.html"><span class="button__label">See profile setup</span><span class="button__icon" aria-hidden="true">→</span></a></div></article><article class="duo-card duo-card--reverse" data-aos="fade-up"><figure class="duo-card__media"><!-- Replace with assets/images/service-citations-cleanup.jpg --><img src="assets/images/placeholder.svg" width="900" height="700" loading="lazy" decoding="async" alt="Duplicate and outdated directory listings reviewed and corrected"><figcaption class="media-label">Clean up what's wrong.</figcaption></figure><div class="duo-card__body"><span class="duo-card__index">02</span><h3>Fixing Duplicate Listings</h3><p class="duo-card__kicker">Merge · correct · remove</p><p>Old addresses, duplicate profiles, and outdated categories quietly work against local visibility. Each directory entry is reviewed, corrected, or removed with a clear record of what changed.</p><a class="button button--editorial duo-card__more" href="contact.html#contact-form"><span class="button__label">Start the conversation</span><span class="button__icon" aria-hidden="true">→</span></a></div></article></div></div></section>
 
-    <section class="service-faq section--paper" aria-labelledby="faq-title"><div class="container service-faq__layout"><div><span class="eyebrow">Citation questions</span><h2 id="faq-title">Focus on real consistency.</h2></div><div class="accordion" data-accordion><article class="accordion__item"><h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-1" type="button" aria-expanded="true" aria-controls="citation-faq-panel-1"><span>Does every directory need identical formatting?</span><span class="accordion__icon" aria-hidden="true">+</span></button></h3><div class="accordion__panel" id="citation-faq-panel-1" role="region" aria-labelledby="citation-faq-trigger-1"><div class="accordion__panel-inner"><p>No. Formatting can differ harmlessly. The material identity—business name, location model, owned website, and relevant classification—should remain accurate.</p></div></div></article><article class="accordion__item"><h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-2" type="button" aria-expanded="false" aria-controls="citation-faq-panel-2"><span>Will you add the business to every directory?</span><span class="accordion__icon" aria-hidden="true">+</span></button></h3><div class="accordion__panel" id="citation-faq-panel-2" role="region" aria-labelledby="citation-faq-trigger-2"><div class="accordion__panel-inner"><p>No. The work prioritises relevant, useful records. More listings are not automatically better and can create unnecessary maintenance.</p></div></div></article><article class="accordion__item"><h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-3" type="button" aria-expanded="false" aria-controls="citation-faq-panel-3"><span>Can all duplicate records be removed?</span><span class="accordion__icon" aria-hidden="true">+</span></button></h3><div class="accordion__panel" id="citation-faq-panel-3" role="region" aria-labelledby="citation-faq-trigger-3"><div class="accordion__panel-inner"><p>Not always. Removal depends on publisher rules, access, verification, record history, and whether the entry is truly a duplicate rather than a legitimate location.</p></div></div></article></div></div></section>
 
-    <section class="page-cta section section--white" aria-labelledby="page-cta-title"><div class="container"><div class="page-cta__card"><div class="page-cta__copy"><span class="eyebrow">Start with source details</span><h2 id="page-cta-title">Build consistent local signals.</h2><p>Share the approved business information, known directory issues, previous names or locations, and any available account access.</p></div><div class="page-cta__actions"><a class="button button--dark" href="contact.html#contact-form"><span class="button__label">Request citation support</span><span class="button__icon" aria-hidden="true">↗</span></a><a class="button button--editorial" href="google-business-profile.html"><span class="button__label">See profile setup</span><span class="button__icon" aria-hidden="true">→</span></a></div></div></div></section>
-  </main>
-  <footer class="site-footer"><div class="site-footer__top"><div><h2 class="site-footer__headline" data-config="footer.headline">Local signals count.</h2><p class="site-footer__description" data-config="footer.description">Practical local search support for small businesses that want clearer profiles, stronger consistency, useful location content, and reporting tied to real actions.</p></div><div class="site-footer__contact"><a href="contact.html" data-config-email>Contact email</a><address data-config="contact.address">Business address</address></div></div><div class="site-footer__links"><div><h2>Navigate</h2><ul class="footer-links"><li><a href="index.html" data-nav-index="0">Main</a></li><li><a href="about.html" data-nav-index="1">Our Method</a></li><li><a href="services.html" data-nav-index="2">Local Services</a></li><li><a href="industries.html" data-nav-index="3">Business Types</a></li><li><a href="insights.html" data-nav-index="4">Field Notes</a></li><li><a href="contact.html" data-nav-index="5">Start Here</a></li></ul></div><div><h2>Services</h2><ul class="footer-services"><li><a href="google-business-profile.html" data-service-index="0">Google Business Profile</a></li><li><a href="local-citations.html" data-service-index="1">Local Citations</a></li><li><a href="review-growth.html" data-service-index="2">Review Growth</a></li><li><a href="location-pages.html" data-service-index="3">Location Pages</a></li><li><a href="local-seo-audit.html" data-service-index="4">Local SEO Audit</a></li><li><a href="performance-tracking.html" data-service-index="5">Performance Tracking</a></li></ul></div><div><h2>Legal</h2><ul class="footer-legal"><li><a href="privacy-policy.html" data-legal-index="0">Privacy Policy</a></li><li><a href="terms-of-service.html" data-legal-index="1">Terms of Service</a></li><li><a href="cookie-policy.html" data-legal-index="2">Cookie Policy</a></li></ul></div></div><div class="site-footer__bottom"><p class="site-footer__disclaimer" data-config="footer.disclaimer">Nearloom does not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.</p><p class="site-footer__copyright" data-config="footer.copyright">© 2026 Nearloom Local Ltd. All rights reserved.</p></div></footer>
-  </div></body></html>
+
+
+
+
+
+
+
+      <section class="showcase section section--paper" aria-labelledby="citations-showcase-title">
+        <div class="container">
+          <div class="showcase__head" data-aos="fade-up"><span class="eyebrow">Where inconsistencies hide</span>
+            <h2 id="citations-showcase-title">Four places NAP details quietly drift.</h2>
+            <p class="lede">Small mismatches accumulate in predictable places. Finding them is most of the work.</p>
+          </div>
+          <div class="showcase__grid">
+            <article class="showcase__card" data-aos="fade-up">
+              <div class="showcase__frame">
+                <div class="showcase__media"><!-- Replace with assets/images/citations-showcase-legacy.jpg --><img
+                    src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async"
+                    alt="An outdated directory listing created years earlier"></div>
+                <div class="showcase__notch"><a class="showcase__icon" href="local-seo-audit.html"
+                    aria-label="See the local SEO audit"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="showcase__body">
+                <h3>Legacy Directory Listings</h3>
+                <p>Old directories set up years ago often outlive whoever created them, still showing outdated
+                  information.</p>
+              </div>
+            </article>
+            <article class="showcase__card" data-aos="fade-up">
+              <div class="showcase__frame">
+                <div class="showcase__media"><!-- Replace with assets/images/citations-showcase-move.jpg --><img
+                    src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async"
+                    alt="A business address updated after relocating to a new location"></div>
+                <div class="showcase__notch"><a class="showcase__icon" href="google-business-profile.html"
+                    aria-label="See profile setup"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+              </div>
+              <div class="showcase__body">
+                <h3>Addresses After a Move</h3>
+                <p>A relocation rarely updates every listing at once, leaving customers directions to a business that
+                  isn't there anymore.</p>
+              </div>
+            </article>
+            <article class="showcase__card" data-aos="fade-up">
+              <div class="showcase__frame">
+                <div class="showcase__media"><!-- Replace with assets/images/citations-showcase-duplicate.jpg --><img
+                    src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async"
+                    alt="Two duplicate listings found for the same business location"></div>
+                <div class="showcase__notch"><a class="showcase__icon" href="contact.html#contact-form"
+                    aria-label="Request citation support"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="showcase__body">
+                <h3>Duplicate Profile Entries</h3>
+                <p>Two records for the same location split reviews, confuse platforms, and dilute an otherwise strong
+                  presence.</p>
+              </div>
+            </article>
+            <article class="showcase__card" data-aos="fade-up">
+              <div class="showcase__frame">
+                <div class="showcase__media"><!-- Replace with assets/images/citations-showcase-feeds.jpg --><img
+                    src="assets/images/placeholder.svg" width="800" height="600" loading="lazy" decoding="async"
+                    alt="Shared data feeds used by multiple local directories"></div>
+                <div class="showcase__notch"><a class="showcase__icon" href="services.html"
+                    aria-label="Review local services"><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+              </div>
+              <div class="showcase__body">
+                <h3>Data Aggregator Feeds</h3>
+                <p>Some directories pull from shared data sources, so one incorrect feed can quietly reintroduce an old
+                  mistake.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="request-cards-section section--white" aria-label="Local citation service paths">
+        <div class="container">
+          <div class="request-cards-section__grid">
+      
+            <article class="request-card request-card--light request-card--medium" data-aos="fade-up" data-aos-delay="0">
+              <div class="request-card__top">
+                <span class="request-card__eyebrow">Listing Review</span>
+      
+                <span class="request-card__icon" aria-hidden="true">
+                  <i data-lucide="database-search"></i>
+                </span>
+              </div>
+      
+              <h3 class="request-card__title">Discover</h3>
+      
+              <p class="request-card__text">
+                Locate existing listings and identify missing, outdated, duplicated,
+                or inconsistent business information.
+              </p>
+      
+              <a class="request-card__link" href="contact.html">
+                <span>Review Listings</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+      
+            <article class="request-card request-card--accent request-card--tall" data-aos="fade-up" data-aos-delay="120">
+              <div class="request-card__top">
+                <span class="request-card__eyebrow">Data Consistency</span>
+      
+                <span class="request-card__icon" aria-hidden="true">
+                  <i data-lucide="list-checks"></i>
+                </span>
+              </div>
+      
+              <h3 class="request-card__title">Correct</h3>
+      
+              <p class="request-card__text">
+                Align names, addresses, service details, links, and business categories
+                across the listings that matter most.
+              </p>
+      
+              <a class="request-card__link" href="contact.html">
+                <span>Fix Citations</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+      
+            <article class="request-card request-card--dark request-card--short" data-aos="fade-up" data-aos-delay="240">
+              <div class="request-card__top">
+                <span class="request-card__eyebrow">Listing Expansion</span>
+      
+                <span class="request-card__icon" aria-hidden="true">
+                  <i data-lucide="network"></i>
+                </span>
+              </div>
+      
+              <h3 class="request-card__title">Expand</h3>
+      
+              <p class="request-card__text">
+                Add relevant directory coverage without filling the web with low-value
+                or unrelated listings.
+              </p>
+      
+              <a class="request-card__link" href="contact.html">
+                <span>Build Coverage</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+      
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section section--white duo-cards" aria-labelledby="duo-cards-title">
+        <div class="container">
+          <div class="duo-cards__head" data-aos="fade-up"><span class="eyebrow">Two consistency priorities</span>
+            <h2 id="duo-cards-title">One address, <span class="editorial-word">everywhere.</span></h2>
+          </div>
+          <div class="duo-cards__list">
+            <article class="duo-card" data-aos="fade-up">
+              <figure class="duo-card__media"><!-- Replace with assets/images/service-citations-source.jpg --><img
+                  src="assets/images/placeholder.svg" width="900" height="700" loading="lazy" decoding="async"
+                  alt="One approved business name, address, and phone number confirmed before any directory update">
+                <figcaption class="media-label">Confirm the source first.</figcaption>
+              </figure>
+              <div class="duo-card__body"><span class="duo-card__index">01</span>
+                <h3>A Single Source of Truth</h3>
+                <p class="duo-card__kicker">Name · address · phone</p>
+                <p>Conflicting listings confuse both customers and search platforms. Nearloom confirms one approved
+                  version of the business name, address, and phone number before touching a single directory.</p><a
+                  class="button button--editorial duo-card__more" href="google-business-profile.html"><span
+                    class="button__label">See profile setup</span><span class="button__icon"
+                    aria-hidden="true">→</span></a>
+              </div>
+            </article>
+            <article class="duo-card duo-card--reverse" data-aos="fade-up">
+              <figure class="duo-card__media"><!-- Replace with assets/images/service-citations-cleanup.jpg --><img
+                  src="assets/images/placeholder.svg" width="900" height="700" loading="lazy" decoding="async"
+                  alt="Duplicate and outdated directory listings reviewed and corrected">
+                <figcaption class="media-label">Clean up what's wrong.</figcaption>
+              </figure>
+              <div class="duo-card__body"><span class="duo-card__index">02</span>
+                <h3>Fixing Duplicate Listings</h3>
+                <p class="duo-card__kicker">Merge · correct · remove</p>
+                <p>Old addresses, duplicate profiles, and outdated categories quietly work against local visibility.
+                  Each directory entry is reviewed, corrected, or removed with a clear record of what changed.</p><a
+                  class="button button--editorial duo-card__more" href="contact.html#contact-form"><span
+                    class="button__label">Start the conversation</span><span class="button__icon"
+                    aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-faq section--paper" aria-labelledby="faq-title">
+        <div class="container service-faq__layout">
+          <div><span class="eyebrow">Citation questions</span>
+            <h2 id="faq-title">Focus on real consistency.</h2>
+          </div>
+          <div class="accordion" data-accordion>
+            <article class="accordion__item">
+              <h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-1"
+                  type="button" aria-expanded="true" aria-controls="citation-faq-panel-1"><span>Does every directory
+                    need identical formatting?</span><span class="accordion__icon" aria-hidden="true">+</span></button>
+              </h3>
+              <div class="accordion__panel" id="citation-faq-panel-1" role="region"
+                aria-labelledby="citation-faq-trigger-1">
+                <div class="accordion__panel-inner">
+                  <p>No. Formatting can differ harmlessly. The material identity—business name, location model, owned
+                    website, and relevant classification—should remain accurate.</p>
+                </div>
+              </div>
+            </article>
+            <article class="accordion__item">
+              <h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-2"
+                  type="button" aria-expanded="false" aria-controls="citation-faq-panel-2"><span>Will you add the
+                    business to every directory?</span><span class="accordion__icon"
+                    aria-hidden="true">+</span></button></h3>
+              <div class="accordion__panel" id="citation-faq-panel-2" role="region"
+                aria-labelledby="citation-faq-trigger-2">
+                <div class="accordion__panel-inner">
+                  <p>No. The work prioritises relevant, useful records. More listings are not automatically better and
+                    can create unnecessary maintenance.</p>
+                </div>
+              </div>
+            </article>
+            <article class="accordion__item">
+              <h3 class="accordion__heading"><button class="accordion__trigger" id="citation-faq-trigger-3"
+                  type="button" aria-expanded="false" aria-controls="citation-faq-panel-3"><span>Can all duplicate
+                    records be removed?</span><span class="accordion__icon" aria-hidden="true">+</span></button></h3>
+              <div class="accordion__panel" id="citation-faq-panel-3" role="region"
+                aria-labelledby="citation-faq-trigger-3">
+                <div class="accordion__panel-inner">
+                  <p>Not always. Removal depends on publisher rules, access, verification, record history, and whether
+                    the entry is truly a duplicate rather than a legitimate location.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-cta section section--white" aria-labelledby="page-cta-title">
+        <div class="container">
+          <div class="page-cta__card">
+            <div class="page-cta__copy"><span class="eyebrow">Start with source details</span>
+              <h2 id="page-cta-title">Build consistent local signals.</h2>
+              <p>Share the approved business information, known directory issues, previous names or locations, and any
+                available account access.</p>
+            </div>
+            <div class="page-cta__actions"><a class="button button--dark" href="contact.html#contact-form"><span
+                  class="button__label">Request citation support</span><span class="button__icon"
+                  aria-hidden="true">↗</span></a><a class="button button--editorial"
+                href="google-business-profile.html"><span class="button__label">See profile setup</span><span
+                  class="button__icon" aria-hidden="true">→</span></a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__top">
+        <div>
+          <h2 class="site-footer__headline" data-config="footer.headline">Local signals count.</h2>
+          <p class="site-footer__description" data-config="footer.description">Practical local search support for small
+            businesses that want clearer profiles, stronger consistency, useful location content, and reporting tied to
+            real actions.</p>
+        </div>
+        <div class="site-footer__contact"><a href="contact.html" data-config-email>Contact email</a>
+          <address data-config="contact.address">Business address</address>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <div>
+          <h2>Navigate</h2>
+          <ul class="footer-links">
+            <li><a href="index.html" data-nav-index="0">Main</a></li>
+            <li><a href="about.html" data-nav-index="1">Our Method</a></li>
+            <li><a href="services.html" data-nav-index="2">Local Services</a></li>
+            <li><a href="industries.html" data-nav-index="3">Business Types</a></li>
+            <li><a href="insights.html" data-nav-index="4">Field Notes</a></li>
+            <li><a href="contact.html" data-nav-index="5">Start Here</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul class="footer-services">
+            <li><a href="google-business-profile.html" data-service-index="0">Google Business Profile</a></li>
+            <li><a href="local-citations.html" data-service-index="1">Local Citations</a></li>
+            <li><a href="review-growth.html" data-service-index="2">Review Growth</a></li>
+            <li><a href="location-pages.html" data-service-index="3">Location Pages</a></li>
+            <li><a href="local-seo-audit.html" data-service-index="4">Local SEO Audit</a></li>
+            <li><a href="performance-tracking.html" data-service-index="5">Performance Tracking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul class="footer-legal">
+            <li><a href="privacy-policy.html" data-legal-index="0">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" data-legal-index="1">Terms of Service</a></li>
+            <li><a href="cookie-policy.html" data-legal-index="2">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__disclaimer" data-config="footer.disclaimer">Nearloom does not guarantee search positions,
+          map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition,
+          business category, and platform changes.</p>
+        <p class="site-footer__copyright" data-config="footer.copyright">© 2026 Nearloom Local Ltd. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
