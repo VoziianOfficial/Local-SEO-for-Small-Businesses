@@ -1032,13 +1032,13 @@
 
 .insight-switcher {
   position: relative;
-  padding-bottom: clamp(70px, 9vw, 120px);
+  padding-bottom: clamp(42px, 5vw, 72px);
   background: var(--color-white);
 }
 
 .insight-switcher__media {
   position: relative;
-  min-height: clamp(240px, 34vw, 420px);
+  min-height: clamp(180px, 24vw, 300px);
   background-image: url("../images/card-2.jpg");
   background-position: center;
   background-size: cover;
@@ -1060,7 +1060,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: clamp(240px, 34vw, 420px);
+  min-height: clamp(180px, 24vw, 300px);
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
@@ -1068,9 +1068,9 @@
 
 .insight-switcher__stat {
   display: grid;
-  gap: 12px;
+  gap: 8px;
   justify-items: center;
-  padding: 24px 18px;
+  padding: 18px 16px;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
 }
@@ -1078,7 +1078,7 @@
 .insight-switcher__stat strong {
   color: var(--color-white);
   font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 4.8vw, 4.5rem);
+  font-size: clamp(2.25rem, 3.8vw, 3.7rem);
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -1100,7 +1100,7 @@
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
   gap: 0;
   width: min(calc(100% - (var(--page-gutter) * 2)), 1180px);
-  margin-top: clamp(-74px, -7vw, -48px);
+  margin-top: clamp(-54px, -5vw, -36px);
   margin-inline: auto;
   border: 1px solid var(--color-border-light);
   border-radius: 0 0 28px 28px;
@@ -1117,12 +1117,12 @@
 
 .insight-switcher__tab {
   display: grid;
-  grid-template-columns: 68px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
   width: 100%;
-  min-height: 128px;
-  padding: 24px 28px;
+  min-height: 102px;
+  padding: 18px 22px;
   border: 0;
   border-bottom: 1px solid var(--color-border-light);
   background: transparent;
@@ -1152,8 +1152,8 @@
 
 .insight-switcher__tab-number {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   place-items: center;
   border: 1px solid rgba(17, 21, 19, 0.12);
   border-radius: 50%;
@@ -1171,11 +1171,11 @@
 
 .insight-switcher__tab-body {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .insight-switcher__tab-body strong {
-  font-size: clamp(1.02rem, 1.5vw, 1.34rem);
+  font-size: clamp(0.98rem, 1.25vw, 1.18rem);
   font-weight: 800;
   line-height: 1.2;
 }
@@ -1199,7 +1199,7 @@
 
 .insight-switcher__content {
   display: none;
-  padding: clamp(28px, 4vw, 54px);
+  padding: clamp(22px, 3vw, 38px);
 }
 
 .insight-switcher__content.is-active {
@@ -1208,31 +1208,31 @@
 
 .insight-switcher__title {
   max-width: 680px;
-  margin-top: 12px;
-  font-size: clamp(2rem, 4.1vw, 4rem);
-  line-height: 0.98;
+  margin-top: 8px;
+  font-size: clamp(1.75rem, 3vw, 3.05rem);
+  line-height: 1;
   letter-spacing: -0.05em;
 }
 
 .insight-switcher__copy {
   max-width: 720px;
-  margin-top: 22px;
+  margin-top: 14px;
   color: var(--color-muted);
-  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  line-height: 1.58;
 }
 
 .insight-switcher__detail-grid {
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1fr);
-  gap: clamp(24px, 3.2vw, 40px);
+  gap: clamp(18px, 2.4vw, 30px);
   align-items: stretch;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .insight-switcher__figure {
   overflow: hidden;
-  min-height: clamp(340px, 31vw, 40px);
+  min-height: clamp(220px, 22vw, 300px);
   margin: 0;
   border-radius: 20px;
   background: var(--color-surface);
@@ -1252,7 +1252,7 @@
 
 .insight-switcher__list {
   display: grid;
-  gap: 16px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1262,7 +1262,8 @@
   position: relative;
   padding-left: 34px;
   color: var(--color-muted);
-  line-height: 1.65;
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
 .insight-switcher__list li::before {
@@ -1294,24 +1295,24 @@
 
 @media (max-width: 991px) {
   .insight-switcher__media {
-    min-height: 300px;
+    min-height: 240px;
     background-attachment: scroll;
   }
 
   .insight-switcher__stats {
-    min-height: 300px;
+    min-height: 240px;
     grid-template-columns: repeat(2, 1fr);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .insight-switcher__stat {
-    min-height: 150px;
+    min-height: 120px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .insight-switcher__panel {
     grid-template-columns: 1fr;
-    margin-top: -36px;
+    margin-top: -28px;
   }
 
   .insight-switcher__tabs {
@@ -1320,7 +1321,7 @@
   }
 
   .insight-switcher__tab {
-    min-height: 108px;
+    min-height: 92px;
   }
 
   .insight-switcher__detail-grid {
@@ -1334,7 +1335,7 @@
 
 @media (max-width: 767px) {
   .insight-switcher {
-    padding-bottom: 56px;
+    padding-bottom: 42px;
   }
 
   .insight-switcher__media {
@@ -1349,21 +1350,21 @@
 
   .insight-switcher__stat {
     min-height: auto;
-    padding: 30px 18px;
+    padding: 22px 18px;
     border-right: 0;
   }
 
   .insight-switcher__panel {
     width: calc(100% - 24px);
-    margin-top: -18px;
+    margin-top: -14px;
     border-radius: 0 0 20px 20px;
   }
 
   .insight-switcher__tab {
     grid-template-columns: 56px minmax(0, 1fr);
     gap: 14px;
-    min-height: 96px;
-    padding: 18px 18px;
+    min-height: 82px;
+    padding: 14px 16px;
   }
 
   .insight-switcher__tab-number {
@@ -1373,31 +1374,31 @@
   }
 
   .insight-switcher__content {
-    padding: 22px 18px 24px;
+    padding: 18px 16px 20px;
   }
 
   .insight-switcher__title {
-    font-size: clamp(1.85rem, 9vw, 2.6rem);
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
   }
 
   .insight-switcher__copy {
-    margin-top: 18px;
+    margin-top: 12px;
     font-size: 0.94rem;
-    line-height: 1.65;
+    line-height: 1.55;
   }
 
   .insight-switcher__detail-grid {
-    gap: 18px;
-    margin-top: 22px;
+    gap: 14px;
+    margin-top: 16px;
   }
 
   .insight-switcher__figure {
-    min-height: 300px;
+    min-height: 220px;
     border-radius: 16px;
   }
 
   .insight-switcher__list {
-    gap: 12px;
+    gap: 9px;
   }
 }
 
