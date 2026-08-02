@@ -299,6 +299,67 @@
     requestUpdate();
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const metricsBand = document.querySelector(".local-metrics-band");
+
+    if (!metricsBand) return;
+
+    const counters = metricsBand.querySelectorAll("[data-counter]");
+    let hasAnimated = false;
+
+    const animateCounter = (element, index) => {
+      const target = Number(element.dataset.counter);
+      const duration = 1900 + (index * 140);
+      const formatter = new Intl.NumberFormat("en-US");
+      let startTime = 0;
+      let previousValue = -1;
+
+      const easeOutQuart = (value) => 1 - Math.pow(1 - value, 4);
+
+      const updateCounter = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutQuart(progress);
+        const value = Math.min(target, Math.round(target * eased));
+
+        if (value !== previousValue) {
+          element.textContent = formatter.format(value);
+          previousValue = value;
+        }
+
+        element.style.setProperty("--counter-lift", (1 + ((1 - progress) * 0.035)).toFixed(3));
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = formatter.format(target);
+          element.style.removeProperty("--counter-lift");
+          element.classList.add("is-counted");
+        }
+      };
+
+      requestAnimationFrame(updateCounter);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            counters.forEach(animateCounter);
+            currentObserver.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.35
+      }
+    );
+
+    observer.observe(metricsBand);
+  });
+
   function initParticles() {
     document.querySelectorAll("[data-particle-canvas]").forEach(function (canvas) {
       if (canvas.dataset.particlesReady === "true") return;
