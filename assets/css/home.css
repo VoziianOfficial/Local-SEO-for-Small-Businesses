@@ -1411,3 +1411,17 @@
     transition: none;
   }
 }
+
+.duo-cards__head {
+  max-width: min(100%, 980px);
+}
+
+.duo-cards__head h2 {
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .duo-cards__head h2 {
+    white-space: normal;
+  }
+}
