@@ -2,34 +2,59 @@
   "use strict";
 
   function initSignalStories() {
-    var mediaElement = document.querySelector("[data-signal-media]");
-    var contentElement = document.querySelector("[data-signal-content]");
-    if (!mediaElement || !contentElement || !window.Swiper) return;
-    if (mediaElement.dataset.swiperReady === "true" || contentElement.dataset.swiperReady === "true") return;
+    var swiperElement = document.querySelector("[data-signal-swiper]");
+    if (!swiperElement || !window.Swiper) return;
+    if (swiperElement.dataset.swiperReady === "true") return;
+    var slides = swiperElement.querySelectorAll(".swiper-slide");
 
-    var mediaSwiper = new window.Swiper(mediaElement, {
-      speed: 700,
-      effect: "fade",
-      fadeEffect: { crossFade: true },
-      allowTouchMove: false,
-      watchSlidesProgress: true,
-      a11y: { enabled: true }
-    });
-
-    var contentSwiper = new window.Swiper(contentElement, {
-      speed: 700,
-      slidesPerView: 1,
-      autoHeight: true,
+    var signalSwiper = new window.Swiper(swiperElement, {
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      initialSlide: Math.floor(slides.length / 2),
+      observer: true,
+      observeParents: true,
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      speed: 800,
+      slideToClickedSlide: true,
       keyboard: { enabled: true, onlyInViewport: true },
-      navigation: { prevEl: "[data-signal-prev]", nextEl: "[data-signal-next]" },
-      pagination: { el: "[data-signal-pagination]", type: "fraction" },
+      pagination: { el: "[data-signal-pagination]", clickable: true },
       a11y: { enabled: true }
     });
 
-    mediaSwiper.controller.control = contentSwiper;
-    contentSwiper.controller.control = mediaSwiper;
-    mediaElement.dataset.swiperReady = "true";
-    contentElement.dataset.swiperReady = "true";
+    swiperElement.signalSwiper = signalSwiper;
+    var slideTo = signalSwiper.slideTo.bind(signalSwiper);
+    signalSwiper.slideNext = function () {
+      slideTo((signalSwiper.activeIndex + 1) % slides.length);
+    };
+    signalSwiper.slidePrev = function () {
+      slideTo((signalSwiper.activeIndex - 1 + slides.length) % slides.length);
+    };
+
+    function centerMiddleSlide() {
+      if (typeof signalSwiper.update === "function") signalSwiper.update();
+      if (typeof signalSwiper.slideToLoop === "function") {
+        signalSwiper.slideToLoop(Math.floor(slides.length / 2), 0);
+      } else {
+        slideTo(Math.floor(slides.length / 2), 0);
+      }
+    }
+    window.setTimeout(centerMiddleSlide, 120);
+    window.setTimeout(centerMiddleSlide, 900);
+
+    swiperElement.addEventListener("click", function (event) {
+      var slide = event.target.closest(".swiper-slide");
+      if (!slide || slide.classList.contains("swiper-slide-active")) return;
+      event.preventDefault();
+      if (typeof signalSwiper.slideToLoop === "function" && slide.dataset.swiperSlideIndex) {
+        signalSwiper.slideToLoop(Number(slide.dataset.swiperSlideIndex));
+      } else {
+        slideTo(Array.prototype.indexOf.call(slides, slide));
+      }
+    });
+
+    swiperElement.dataset.swiperReady = "true";
   }
 
   function initHome() {

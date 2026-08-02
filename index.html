@@ -132,66 +132,45 @@
       </section>
 
       <section class="signal-stories section--dark" aria-labelledby="signal-stories-title" data-swiper-section>
+        <canvas class="signal-stories__canvas" data-particle-canvas aria-hidden="true"></canvas>
         <div class="signal-stories__heading">
-          <span class="eyebrow">Four connected signals</span>
+          <span class="eyebrow">Connected signals</span>
           <h2 id="signal-stories-title">What search <span class="editorial-word">needs.</span></h2>
         </div>
-        <div class="signal-stories__layout">
-          <div class="signal-stories__media swiper" data-signal-media aria-label="Local signal images">
-            <div class="swiper-wrapper">
-              <figure class="swiper-slide">
-                <!-- Replace with assets/images/home-profile-review.jpg -->
-                <img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Small business owner reviewing a Google Business Profile">
-              </figure>
-              <figure class="swiper-slide">
-                <!-- Replace with assets/images/home-directory-details.jpg -->
-                <img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Business details being checked across local directories">
-              </figure>
-              <figure class="swiper-slide">
-                <!-- Replace with assets/images/home-review-conversation.jpg -->
-                <img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Business team discussing an ethical customer review request">
-              </figure>
-              <figure class="swiper-slide">
-                <!-- Replace with assets/images/home-location-page.jpg -->
-                <img src="assets/images/placeholder.svg" width="960" height="720" loading="lazy" decoding="async" alt="Useful location page content planned around a real service area">
-              </figure>
-            </div>
+        <div class="signal-stories__carousel swiper" data-signal-swiper aria-label="Local signal carousel">
+          <div class="swiper-wrapper">
+            <a class="swiper-slide signal-stories__card" href="google-business-profile.html" aria-label="Explore Google Business Profile support">
+              <span class="signal-stories__label">Profile Setup</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="local-citations.html" aria-label="Explore citation cleanup">
+              <span class="signal-stories__label">Citation Cleanup</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="review-growth.html" aria-label="Explore review support">
+              <span class="signal-stories__label">Review Support</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="location-pages.html" aria-label="Explore location pages">
+              <span class="signal-stories__label">Location Pages</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="local-seo-audit.html" aria-label="Explore local SEO audit">
+              <span class="signal-stories__label">SEO Audit</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="performance-tracking.html" aria-label="Explore performance tracking">
+              <span class="signal-stories__label">Performance Tracking</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="services.html" aria-label="Explore all local SEO services">
+              <span class="signal-stories__label">Service Scope</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="contact.html#contact-form" aria-label="Start a local visibility request">
+              <span class="signal-stories__label">Start Here</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="about.html" aria-label="Explore the Nearloom method">
+              <span class="signal-stories__label">Local Method</span>
+            </a>
+            <a class="swiper-slide signal-stories__card" href="insights.html" aria-label="Explore local search field notes">
+              <span class="signal-stories__label">Field Notes</span>
+            </a>
           </div>
-          <div class="signal-stories__text-wrap">
-            <div class="signal-stories__content swiper" data-signal-content aria-label="Local signal explanations">
-              <div class="swiper-wrapper">
-                <article class="swiper-slide">
-                  <span class="signal-stories__number">01</span>
-                  <h3>Google Business Profile</h3>
-                  <p>Accurate details, focused categories, relevant services, current photos, and considered updates help the listing reflect the business people will actually find.</p>
-                  <a class="button button--editorial" href="google-business-profile.html"><span class="button__label">Explore profile support</span><span class="button__icon" aria-hidden="true">→</span></a>
-                </article>
-                <article class="swiper-slide">
-                  <span class="signal-stories__number">02</span>
-                  <h3>Directory Consistency</h3>
-                  <p>Matching names, addresses, websites, and categories reduce ambiguity. Relevant directories should support the same clear picture without unnecessary duplication.</p>
-                  <a class="button button--editorial" href="local-citations.html"><span class="button__label">Understand citation work</span><span class="button__icon" aria-hidden="true">→</span></a>
-                </article>
-                <article class="swiper-slide">
-                  <span class="signal-stories__number">03</span>
-                  <h3>Customer Reviews</h3>
-                  <p>Ethical, consistent review requests make it easier for real customers to describe their experience. Responses then show that the business listens without steering sentiment.</p>
-                  <a class="button button--editorial" href="review-growth.html"><span class="button__label">Build a review workflow</span><span class="button__icon" aria-hidden="true">→</span></a>
-                </article>
-                <article class="swiper-slide">
-                  <span class="signal-stories__number">04</span>
-                  <h3>Location-Based Pages</h3>
-                  <p>Useful pages connect genuine services with real places, practical details, and a direct conversion path. They should inform people, not imitate doorway-page tactics.</p>
-                  <a class="button button--editorial" href="location-pages.html"><span class="button__label">Plan useful local pages</span><span class="button__icon" aria-hidden="true">→</span></a>
-                </article>
-              </div>
-            </div>
-            <div class="signal-stories__controls swiper-controls">
-              <button class="swiper-control" type="button" data-signal-prev aria-label="Show previous local signal">Prev</button>
-              <div class="swiper-pagination" data-signal-pagination aria-live="polite"></div>
-              <button class="swiper-control" type="button" data-signal-next aria-label="Show next local signal">Next</button>
-            </div>
-          </div>
+          <div class="swiper-pagination" data-signal-pagination></div>
         </div>
       </section>
 
