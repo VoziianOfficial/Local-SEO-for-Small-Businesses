@@ -1833,51 +1833,7 @@
 
 @media (max-width: 767px) {
   .local-metrics-band {
-    padding-block: 38px;
-  }
-
-  .local-metrics-band .container {
-    width: calc(100% - 28px);
-  }
-
-  .local-metrics-band__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .local-metrics-band__item {
-    min-height: auto;
-    padding: 22px 10px;
-  }
-
-  .local-metrics-band__item+.local-metrics-band__item {
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .local-metrics-band__item:nth-child(3),
-  .local-metrics-band__item:nth-child(4) {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .local-metrics-band__icon {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 18px;
-  }
-
-  .local-metrics-band__icon i,
-  .local-metrics-band__icon svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .local-metrics-band__value {
-    font-size: clamp(3rem, 14vw, 4.4rem);
-  }
-
-  .local-metrics-band__label {
-    margin-top: 12px;
-    font-size: 1rem;
+    display: none;
   }
 }
 

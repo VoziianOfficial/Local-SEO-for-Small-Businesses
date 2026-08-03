@@ -393,6 +393,46 @@ h3 {
   }
 }
 
+@media (max-width: 767px) {
+  .route-cards {
+    --route-card-overlap: 34px;
+    padding-bottom: 30px;
+  }
+
+  .route-cards__grid {
+    gap: 12px;
+  }
+
+  .route-card {
+    min-height: 142px;
+    padding: 18px 18px 16px;
+    border-radius: 18px;
+  }
+
+  .route-card__icon {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .route-card__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .route-card__title {
+    padding-right: 40px;
+    font-size: 1rem;
+  }
+
+  .route-card__text {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+}
+
 .swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
@@ -2486,6 +2526,38 @@ h3 {
   .site-footer__copyright {
     white-space: normal;
   }
+
+  .signal-stories {
+    min-height: auto;
+    padding: 46px 0 48px;
+    overflow: hidden;
+  }
+
+  .signal-stories__carousel {
+    overflow: hidden;
+    padding: 4px 0 38px;
+  }
+
+  .signal-stories__carousel .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .signal-stories .swiper-slide,
+  .signal-stories .swiper-slide-active {
+    width: min(58vw, 340px);
+    height: clamp(310px, 52vw, 390px);
+    border-radius: 18px;
+    opacity: 1;
+  }
+
+  .signal-stories .swiper-slide-active {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.42), 0 0 0 1px var(--signal-blue-soft);
+  }
+
+  .signal-stories__label {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 767px) {
@@ -2504,16 +2576,30 @@ h3 {
   }
 
   .signal-stories {
-    padding-inline: 22px;
+    gap: 18px;
+    min-height: auto;
+    padding: 34px 0 40px;
   }
 
-  .signal-stories .swiper-slide {
-    width: clamp(122px, 31vw, 158px);
-    height: clamp(230px, 56vw, 305px);
+  .signal-stories__heading {
+    width: calc(100% - 28px);
   }
 
+  .signal-stories__heading h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .signal-stories .swiper-slide,
   .signal-stories .swiper-slide-active {
-    width: clamp(178px, 48vw, 230px);
+    width: min(82vw, 310px);
+    height: clamp(280px, 74vw, 360px);
+  }
+
+  .signal-stories__label {
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    font-size: clamp(1rem, 5vw, 1.28rem);
   }
 
   .section--compact {
@@ -2522,12 +2608,12 @@ h3 {
 
   .page-hero,
   .page-hero--compact {
-    min-height: calc(100svh - var(--mobile-header-height));
+    min-height: auto;
   }
 
   .page-hero__inner {
-    padding-top: 90px;
-    padding-bottom: 60px;
+    padding-top: 72px;
+    padding-bottom: 42px;
     text-align: center;
   }
 

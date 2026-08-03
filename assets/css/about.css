@@ -286,6 +286,14 @@
 }
 
 @media (max-width: 767px) {
+    .about-hero .page-hero__inner {
+        padding: 62px 22px 38px;
+    }
+
+    .about-hero .page-hero__title {
+        font-size: clamp(2.35rem, 12vw, 3.85rem);
+    }
+
     .about-hero .page-hero__portrait {
         width: min(240px, 68vw);
     }
