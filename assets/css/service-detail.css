@@ -523,6 +523,7 @@
     .service--location .service-hero__media,
     .service--audit .service-hero__media,
     .service--tracking .service-hero__media {
+        display: none;
         width: clamp(260px, 46vw, 380px);
         justify-self: center;
         transform: none;
@@ -542,6 +543,7 @@
     .service--location .service-hero__media,
     .service--audit .service-hero__media,
     .service--tracking .service-hero__media {
+        display: none;
         width: min(260px, 70vw);
     }
 
