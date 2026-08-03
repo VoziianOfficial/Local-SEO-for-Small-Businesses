@@ -2,6 +2,16 @@
 
 Nearloom is a production-oriented, multi-page vanilla HTML, CSS, JavaScript, and PHP website for a local SEO studio serving small businesses. All website, metadata, accessibility, configuration, PHP response, and editor-facing content is written in English.
 
+## Sync brand/contact config
+
+Edit `config/config.js` when the brand name, legal name, contact email, or address changes. Then run:
+
+```bash
+node scripts/sync-config.js
+```
+
+The script updates those values directly across HTML titles, meta tags, page copy, PHP, CSS/JS text, and README content.
+
 ## Run locally
 
 PHP is recommended because the contact endpoint is implemented in `contact.php`.
