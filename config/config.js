@@ -40,7 +40,7 @@ window.SITE_CONFIG = {
     "successMessage": "Thank you! We have successfully received your request. Our team will review your information and get back to you shortly.",
     "errorMessage": "Your request could not be sent. Please review the form and try again.",
     "networkErrorMessage": "A network error interrupted the request. Your information is still in the form; please try again.",
-	    "privacyLabel": "I agree that {legalName} may use this information to respond to my request.",
+		    "privacyLabel": "I agree that we may use this information to respond to my request.",
     "inquiryTypes": [
       "Local SEO Service",
       "Advertising and Collaboration",
@@ -63,7 +63,7 @@ window.SITE_CONFIG = {
   "footer": {
     "headline": "Local signals count.",
     "description": "Practical local search support for small businesses that want clearer profiles, stronger consistency, useful location content, and reporting tied to real actions.",
-	    "disclaimer": "{brandName} does not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.",
+	    "disclaimer": "We do not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.",
 	    "copyright": "© 2026 {legalName}. All rights reserved."
   },
   "legal": {

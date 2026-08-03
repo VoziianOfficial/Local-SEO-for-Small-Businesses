@@ -6,7 +6,6 @@ const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
 const configPath = path.join(root, "config", "config.js");
-const statePath = path.join(root, "config", ".sync-state.json");
 
 function readConfig() {
   const source = fs.readFileSync(configPath, "utf8");
@@ -17,24 +16,6 @@ function readConfig() {
     throw new Error("config/config.js did not define window.SITE_CONFIG.");
   }
   return sandbox.window.SITE_CONFIG;
-}
-
-function readState() {
-  try {
-    return JSON.parse(fs.readFileSync(statePath, "utf8"));
-  } catch (error) {
-    return {};
-  }
-}
-
-function writeState(config) {
-  const state = {
-    brandName: config.brand.name,
-    legalName: config.brand.legalName,
-    email: config.contact.recipientEmail,
-    address: config.contact.address
-  };
-  fs.writeFileSync(statePath, JSON.stringify(state, null, 2) + "\n");
 }
 
 function escapeRegExp(value) {
@@ -58,20 +39,14 @@ function walk(directory, files = []) {
 
 function shouldSyncFile(filePath) {
   const relative = path.relative(root, filePath);
-  if (relative === path.join("config", ".sync-state.json")) return false;
   if (relative === path.join("scripts", "sync-config.js")) return false;
   return /\.(html|php|js|css|md|json)$/i.test(filePath);
 }
 
 const config = readConfig();
-const state = readState();
 const legacy = config.legacy || {};
 
 const replacements = [
-  [state.legalName, config.brand.legalName],
-  [state.brandName, config.brand.name],
-  [state.email, config.contact.recipientEmail],
-  [state.address, config.contact.address],
   [legacy.legalName || "Nearloom Local Ltd.", config.brand.legalName],
   [legacy.brandName || "Nearloom", config.brand.name],
   [legacy.email || "hello@nearloomlocal.com", config.contact.recipientEmail],
@@ -95,5 +70,4 @@ for (const filePath of walk(root).filter(shouldSyncFile)) {
   }
 }
 
-writeState(config);
 console.log("config sync complete. files changed: " + changed);
