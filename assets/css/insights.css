@@ -756,6 +756,11 @@
         transform 220ms ease;
 }
 
+.service-filter-gallery__content>span svg {
+    width: 17px;
+    height: 17px;
+}
+
 .service-filter-gallery__card:hover img,
 .service-filter-gallery__card:focus-visible img {
     transform: scale(1.07);

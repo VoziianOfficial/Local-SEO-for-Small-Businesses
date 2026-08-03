@@ -15,6 +15,59 @@
     inputs.forEach(function (input) { input.addEventListener("change", update); });
     update();
   }
-  function initInsights() { if (document.documentElement.dataset.insightsReady === "true") return; document.documentElement.dataset.insightsReady = "true"; try { initChecklist(); } catch (error) { console.error("Nearloom component failed: checklist", error); } }
+
+  function initServiceFilterGallery() {
+    var gallery = document.querySelector(".service-filter-gallery");
+    if (!gallery || gallery.dataset.filterReady === "true") return;
+
+    gallery.dataset.filterReady = "true";
+
+    var filters = [].slice.call(gallery.querySelectorAll("[data-service-filter]"));
+    var cards = [].slice.call(gallery.querySelectorAll("[data-service-category]"));
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var filterTimer = null;
+
+    function applyFilter(selectedFilter) {
+      window.clearTimeout(filterTimer);
+
+      cards.forEach(function (card) {
+        var shouldShow = selectedFilter === "all" || card.dataset.serviceCategory === selectedFilter;
+
+        if (shouldShow) {
+          card.hidden = false;
+          window.requestAnimationFrame(function () {
+            card.classList.remove("is-filtering-out");
+          });
+          return;
+        }
+
+        if (reduceMotion) {
+          card.hidden = true;
+          return;
+        }
+
+        card.classList.add("is-filtering-out");
+        filterTimer = window.setTimeout(function () {
+          if (card.classList.contains("is-filtering-out")) card.hidden = true;
+        }, 260);
+      });
+    }
+
+    filters.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var selectedFilter = button.dataset.serviceFilter;
+
+        filters.forEach(function (filterButton) {
+          var isActive = filterButton === button;
+          filterButton.classList.toggle("is-active", isActive);
+          filterButton.setAttribute("aria-pressed", String(isActive));
+        });
+
+        applyFilter(selectedFilter);
+      });
+    });
+  }
+
+  function initInsights() { if (document.documentElement.dataset.insightsReady === "true") return; document.documentElement.dataset.insightsReady = "true"; try { initChecklist(); } catch (error) { console.error("Nearloom component failed: checklist", error); } try { initServiceFilterGallery(); } catch (error) { console.error("Nearloom component failed: service filter gallery", error); } }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initInsights); else initInsights();
 }());
