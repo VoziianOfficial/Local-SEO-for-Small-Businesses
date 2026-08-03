@@ -124,10 +124,20 @@
     if (swiperElement.dataset.swiperReady === "true") return;
     var slides = swiperElement.querySelectorAll(".swiper-slide");
 
-    var signalSwiper = new window.Swiper(swiperElement, {
-      grabCursor: true,
-      centeredSlides: true,
-      loop: true,
+	    var signalSwiper = new window.Swiper(swiperElement, {
+	      grabCursor: true,
+	      simulateTouch: true,
+	      allowTouchMove: true,
+	      touchEventsTarget: "container",
+	      touchStartPreventDefault: false,
+	      touchMoveStopPropagation: false,
+	      threshold: 2,
+	      touchRatio: 1.15,
+	      longSwipesRatio: 0.18,
+	      preventClicks: true,
+	      preventClicksPropagation: true,
+	      centeredSlides: true,
+	      loop: true,
       initialSlide: Math.floor(slides.length / 2),
       observer: true,
       observeParents: true,
@@ -160,9 +170,13 @@
     window.setTimeout(centerMiddleSlide, 120);
     window.setTimeout(centerMiddleSlide, 900);
 
-    swiperElement.addEventListener("click", function (event) {
-      var slide = event.target.closest(".swiper-slide");
-      if (!slide || slide.classList.contains("swiper-slide-active")) return;
+	    swiperElement.addEventListener("click", function (event) {
+	      if (signalSwiper.allowClick === false) {
+	        event.preventDefault();
+	        return;
+	      }
+	      var slide = event.target.closest(".swiper-slide");
+	      if (!slide || slide.classList.contains("swiper-slide-active")) return;
       event.preventDefault();
       if (typeof signalSwiper.slideToLoop === "function" && slide.dataset.swiperSlideIndex) {
         signalSwiper.slideToLoop(Number(slide.dataset.swiperSlideIndex));
@@ -182,11 +196,22 @@
       var prev = section ? section.querySelector("[data-swiper-prev]") : null;
       var next = section ? section.querySelector("[data-swiper-next]") : null;
       var pagination = section ? section.querySelector("[data-swiper-pagination]") : null;
-      new window.Swiper(element, {
-        speed: 650,
-        spaceBetween: 18,
-        slidesPerView: 1.08,
-        keyboard: { enabled: true, onlyInViewport: true },
+	      new window.Swiper(element, {
+	        speed: 650,
+	        spaceBetween: 18,
+	        slidesPerView: 1.08,
+	        grabCursor: true,
+	        simulateTouch: true,
+	        allowTouchMove: true,
+	        touchEventsTarget: "container",
+	        touchStartPreventDefault: false,
+	        touchMoveStopPropagation: false,
+	        threshold: 2,
+	        touchRatio: 1.15,
+	        longSwipesRatio: 0.18,
+	        preventClicks: true,
+	        preventClicksPropagation: true,
+	        keyboard: { enabled: true, onlyInViewport: true },
         navigation: { prevEl: prev || undefined, nextEl: next || undefined },
         pagination: { el: pagination || undefined, clickable: true },
         breakpoints: {

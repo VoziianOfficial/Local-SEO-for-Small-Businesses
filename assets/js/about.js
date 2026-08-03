@@ -81,9 +81,19 @@
     new Swiper(requestSwiperElement, {
       loop: true,
       speed: 700,
-      spaceBetween: 18,
-      grabCursor: true,
-      slidesPerView: 1,
+	      spaceBetween: 18,
+	      grabCursor: true,
+	      simulateTouch: true,
+	      allowTouchMove: true,
+	      touchEventsTarget: "container",
+	      touchStartPreventDefault: false,
+	      touchMoveStopPropagation: false,
+	      threshold: 2,
+	      touchRatio: 1.15,
+	      longSwipesRatio: 0.18,
+	      preventClicks: true,
+	      preventClicksPropagation: true,
+	      slidesPerView: 1,
       centeredSlides: false,
 
       autoplay: {

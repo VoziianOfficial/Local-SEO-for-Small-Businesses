@@ -445,6 +445,15 @@ h3 {
   cursor: grabbing;
 }
 
+.swiper {
+  touch-action: pan-y;
+}
+
+.swiper-wrapper,
+.swiper-slide {
+  touch-action: inherit;
+}
+
 .signal-stories {
   --signal-blue: #7fb6c9;
   --signal-blue-soft: rgba(127, 182, 201, 0.36);
