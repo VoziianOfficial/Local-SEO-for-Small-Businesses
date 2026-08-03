@@ -19,6 +19,9 @@
       grabCursor: true,
       simulateTouch: true,
       allowTouchMove: true,
+      touchEventsTarget: "container",
+      threshold: 3,
+      touchRatio: 1,
       observer: true,
       observeParents: true,
       pagination: {
