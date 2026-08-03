@@ -393,6 +393,18 @@ h3 {
   }
 }
 
+.swiper-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+
+.swiper-grab-cursor {
+  cursor: grab;
+}
+
+.swiper-grab-cursor:active {
+  cursor: grabbing;
+}
+
 .service-deck {
   --deck-blue: var(--color-signal-blue);
   --deck-blue-deep: var(--color-signal-blue-deep);
