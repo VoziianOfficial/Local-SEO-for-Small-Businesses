@@ -37,6 +37,63 @@
       }
     });
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.querySelector(".service-filter-gallery");
+
+    if (!gallery) return;
+
+    const filters = gallery.querySelectorAll("[data-service-filter]");
+    const cards = gallery.querySelectorAll("[data-service-category]");
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let filterTimer = null;
+
+    const applyFilter = (selectedFilter) => {
+      window.clearTimeout(filterTimer);
+
+      cards.forEach((card) => {
+        const category = card.dataset.serviceCategory;
+        const shouldShow =
+          selectedFilter === "all" || category === selectedFilter;
+
+        if (shouldShow) {
+          card.hidden = false;
+
+          requestAnimationFrame(() => {
+            card.classList.remove("is-filtering-out");
+          });
+        } else if (reduceMotion) {
+          card.hidden = true;
+        } else {
+          card.classList.add("is-filtering-out");
+
+          filterTimer = window.setTimeout(() => {
+            if (card.classList.contains("is-filtering-out")) {
+              card.hidden = true;
+            }
+          }, 260);
+        }
+      });
+    };
+
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.serviceFilter;
+
+        filters.forEach((filterButton) => {
+          const isActive = filterButton === button;
+
+          filterButton.classList.toggle("is-active", isActive);
+          filterButton.setAttribute("aria-pressed", String(isActive));
+        });
+
+        applyFilter(selectedFilter);
+      });
+    });
+  });
   function initWorkShowcase() {
     var element = document.querySelector("[data-work-swiper]");
     if (!element || typeof Swiper === "undefined" || element.dataset.swiperReady === "true") return;
