@@ -18,6 +18,68 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    const workSwiperElement = document.querySelector("[data-work-swiper]");
+
+    if (workSwiperElement && typeof Swiper !== "undefined") {
+      const workSwiper = new Swiper(workSwiperElement, {
+        loop: true,
+        speed: 750,
+        spaceBetween: 18,
+        slidesPerView: 1.15,
+        grabCursor: true,
+        simulateTouch: true,
+        allowTouchMove: true,
+        touchEventsTarget: "container",
+        watchOverflow: false,
+        loopAdditionalSlides: 2,
+        observer: true,
+        observeParents: true,
+
+        autoplay: {
+          delay: 2200,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+
+        navigation: {
+          nextEl: ".work-showcase__arrow--next",
+          prevEl: ".work-showcase__arrow--prev"
+        },
+
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true
+        },
+
+        a11y: {
+          enabled: true
+        },
+
+        breakpoints: {
+          560: {
+            slidesPerView: 1.6,
+            spaceBetween: 18
+          },
+          768: {
+            slidesPerView: 2.2,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 2.8,
+            spaceBetween: 22
+          },
+          1280: {
+            slidesPerView: 3.4,
+            spaceBetween: 24
+          }
+        }
+      });
+
+      if (workSwiper.autoplay && typeof workSwiper.autoplay.start === "function") {
+        workSwiper.autoplay.start();
+      }
+    }
+
     const reviewsSwiperElement = document.querySelector("[data-services-reviews-swiper]");
 
     if (!reviewsSwiperElement || typeof Swiper === "undefined") return;
