@@ -46,6 +46,146 @@
     color: var(--color-black);
 }
 
+.service-pillars {
+    padding-block: clamp(50px, 6vw, 86px);
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 26px);
+}
+
+.pillar-card {
+    position: relative;
+    display: flex;
+    min-height: 210px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(24px, 2.8vw, 32px);
+    border-radius: 28px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 240ms ease, box-shadow 240ms ease, background-color 240ms ease;
+    box-shadow: 0 18px 44px rgba(12, 15, 14, .14);
+}
+
+.pillar-card:hover {
+    box-shadow: 0 26px 58px rgba(12, 15, 14, .22);
+    transform: translateY(-6px);
+}
+
+.pillar-card__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border-radius: 50%;
+    transition: transform 240ms ease;
+}
+
+.pillar-card:hover .pillar-card__icon {
+    transform: rotate(8deg) scale(1.05);
+}
+
+.pillar-card__icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.pillar-card__head {
+    max-width: calc(100% - 76px);
+}
+
+.pillar-card__eyebrow {
+    display: block;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.pillar-card__title {
+    margin-top: 14px;
+    font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.22;
+}
+
+.pillar-card__text {
+    margin: 18px 0 0;
+    font-size: .88rem;
+    line-height: 1.55;
+}
+
+.pillar-card--lime {
+    background: var(--color-accent);
+    color: var(--color-black);
+}
+
+.pillar-card--lime .pillar-card__icon {
+    background: var(--color-black);
+    color: var(--color-accent);
+}
+
+.pillar-card--lime .pillar-card__text {
+    color: rgba(17, 21, 19, .68);
+}
+
+.pillar-card--lime:hover {
+    background: var(--color-accent-deep);
+}
+
+.pillar-card--blue {
+    background: var(--color-signal-blue);
+    color: var(--color-black);
+}
+
+.pillar-card--blue .pillar-card__icon {
+    background: var(--color-black);
+    color: var(--color-signal-blue);
+}
+
+.pillar-card--blue .pillar-card__text {
+    color: rgba(17, 21, 19, .68);
+}
+
+.pillar-card--blue:hover {
+    background: var(--color-signal-blue-deep);
+}
+
+.pillar-card--dark {
+    background: var(--color-charcoal);
+    color: var(--color-text-light);
+}
+
+.pillar-card--dark .pillar-card__icon {
+    background: var(--color-accent);
+    color: var(--color-black);
+}
+
+.pillar-card--dark .pillar-card__eyebrow {
+    color: var(--color-accent);
+}
+
+.pillar-card--dark .pillar-card__text {
+    color: var(--color-muted-dark);
+}
+
+.pillar-card--dark:hover {
+    background: var(--color-graphite);
+}
+
+@media (max-width: 860px) {
+    .pillar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .services-ticker {
     overflow: clip;
     padding-block: 22px;
