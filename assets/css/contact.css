@@ -281,7 +281,7 @@
     grid-column: 1 / -1;
 }
 
-.contact-form .form-field:nth-child(5) {
+.contact-form .form-field:nth-child(4) {
     grid-column: auto;
 }
 

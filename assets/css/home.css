@@ -1703,7 +1703,7 @@
   overflow: hidden;
   padding-block: clamp(58px, 7vw, 96px);
   background-color: var(--color-black);
-  background-image: url("../images/shared/local-metrics-bg.webp");
+  background-image: url("../images/card-1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
