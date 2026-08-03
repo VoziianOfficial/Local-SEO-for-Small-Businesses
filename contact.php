@@ -34,6 +34,12 @@ function exceedsLength(string $value, int $maximum): bool
     return strlen($value) > $maximum;
 }
 
+function mailDisplayName(string $value): string
+{
+    $cleaned = trim((string) preg_replace('/[^\pL\pN .,&-]/u', '', $value));
+    return $cleaned !== '' ? $cleaned : 'Website';
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     header('Allow: POST');
     respondJson(405, false, 'Only POST requests are accepted.');
@@ -75,14 +81,26 @@ if (!is_array($config) || json_last_error() !== JSON_ERROR_NONE) {
 }
 
 $recipientEmail = $config['contact']['recipientEmail'] ?? null;
+$contactAddress = $config['contact']['address'] ?? null;
+$brandName = $config['brand']['name'] ?? null;
+$legalName = $config['brand']['legalName'] ?? null;
 $successMessage = $config['forms']['successMessage'] ?? null;
 $allowedInquiryTypes = $config['forms']['inquiryTypes'] ?? null;
 $allowedServices = $config['forms']['serviceOptions'] ?? null;
 
 if (
+    !is_string($brandName) ||
+    $brandName === '' ||
+    preg_match('/[\r\n]/', $brandName) ||
+    !is_string($legalName) ||
+    $legalName === '' ||
+    preg_match('/[\r\n]/', $legalName) ||
     !is_string($recipientEmail) ||
     !filter_var($recipientEmail, FILTER_VALIDATE_EMAIL) ||
     preg_match('/[\r\n]/', $recipientEmail) ||
+    !is_string($contactAddress) ||
+    $contactAddress === '' ||
+    preg_match('/[\r\n]/', $contactAddress) ||
     !is_string($successMessage) ||
     $successMessage === '' ||
     !is_array($allowedInquiryTypes) ||
@@ -106,7 +124,11 @@ foreach ($allowedServices as $allowedService) {
 }
 
 $secureCookie = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
-session_name('NEARLOOMSESSID');
+$sessionPrefix = strtoupper((string) preg_replace('/[^A-Za-z0-9]/', '', $brandName));
+if ($sessionPrefix === '') {
+    $sessionPrefix = 'SITE';
+}
+session_name(substr($sessionPrefix, 0, 24) . 'SESSID');
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
@@ -197,9 +219,12 @@ if ($errors !== []) {
     respondJson(422, false, 'Please correct the highlighted fields and try again.', $errors);
 }
 
-$subject = 'Nearloom website inquiry: ' . $fields['inquiryType'];
+$mailBrandName = mailDisplayName($brandName);
+$subject = $mailBrandName . ' website inquiry: ' . $fields['inquiryType'];
 $emailBody = implode("\n", [
-    'New Nearloom website inquiry',
+    'New ' . $mailBrandName . ' website inquiry',
+    'Website Owner: ' . $legalName,
+    'Contact Address: ' . $contactAddress,
     '',
     'Full Name: ' . $fields['fullName'],
     'Email Address: ' . $fields['email'],
@@ -216,7 +241,7 @@ $emailBody = implode("\n", [
 ]);
 
 $headers = [
-    'From: Nearloom Website <' . $recipientEmail . '>',
+    'From: ' . $mailBrandName . ' Website <' . $recipientEmail . '>',
     'Reply-To: ' . $fields['email'],
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',

@@ -1,17 +1,23 @@
 window.SITE_CONFIG = {
-  "brand": {
-    "name": "Nearloom",
-    "legalName": "Nearloom Local Ltd.",
+	  "brand": {
+	    "name": "Nearloom",
+	    "legalName": "Nearloom Local Ltd.",
     "tagline": "Clearer local visibility for growing businesses.",
     "studioLabel": "Local Search Studio",
     "logoLight": "assets/images/favicon.svg",
     "logoDark": "assets/images/favicon.svg",
     "favicon": "assets/images/favicon.svg"
   },
-  "contact": {
-    "recipientEmail": "hello@nearloomlocal.com",
-    "address": "24 Meridian Court, Leeds, LS1 4AB, United Kingdom"
-  },
+	  "contact": {
+	    "recipientEmail": "hello@nearloomlocal.com",
+	    "address": "24 Meridian Court, Leeds, LS1 4AB, United Kingdom"
+	  },
+	  "legacy": {
+	    "brandName": "Nearloom",
+	    "legalName": "Nearloom Local Ltd.",
+	    "email": "hello@nearloomlocal.com",
+	    "address": "24 Meridian Court, Leeds, LS1 4AB, United Kingdom"
+	  },
   "navigation": {
     "items": [
       { "label": "Main", "href": "index.html" },
@@ -34,7 +40,7 @@ window.SITE_CONFIG = {
     "successMessage": "Thank you! We have successfully received your request. Our team will review your information and get back to you shortly.",
     "errorMessage": "Your request could not be sent. Please review the form and try again.",
     "networkErrorMessage": "A network error interrupted the request. Your information is still in the form; please try again.",
-    "privacyLabel": "I agree that Nearloom Local Ltd. may use this information to respond to my request.",
+	    "privacyLabel": "I agree that {legalName} may use this information to respond to my request.",
     "inquiryTypes": [
       "Local SEO Service",
       "Advertising and Collaboration",
@@ -57,8 +63,8 @@ window.SITE_CONFIG = {
   "footer": {
     "headline": "Local signals count.",
     "description": "Practical local search support for small businesses that want clearer profiles, stronger consistency, useful location content, and reporting tied to real actions.",
-    "disclaimer": "Nearloom does not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.",
-    "copyright": "© 2026 Nearloom Local Ltd. All rights reserved."
+	    "disclaimer": "{brandName} does not guarantee search positions, map placement, calls, enquiries, or revenue. Search visibility varies by location, device, competition, business category, and platform changes.",
+	    "copyright": "© 2026 {legalName}. All rights reserved."
   },
   "legal": {
     "links": [
