@@ -880,6 +880,19 @@
     pointer-events: none;
 }
 
+.service-process::after {
+    position: absolute;
+    inset: -9% 0;
+    z-index: -2;
+    background-image: inherit;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    transform: translate3d(0, var(--parallax-y, 0), 0) scale(1.04);
+    will-change: transform;
+}
+
 .service-process .container {
     width: min(calc(100% - (var(--page-gutter) * 2)),
             1180px);
@@ -889,7 +902,7 @@
 
 .service-process--gbp {
     background-image:
-        url("../images/services/google-business-profile-process.webp");
+        url("../images/card-26.jpg");
 }
 
 .service-process--citations {
@@ -994,22 +1007,20 @@
     transform: translateY(-7px) scale(1.035);
 }
 
+.service-process--gbp .service-process__step:hover,
+.service-process--gbp .service-process__step:focus-visible {
+    background: var(--color-signal-blue-deep);
+    border-color: var(--color-signal-blue-deep);
+    color: var(--color-white);
+}
+
 .service-process__step:hover::before,
 .service-process__step:focus-visible::before {
     border-color: rgba(255, 255, 255, 0.56);
 }
 
 .service-process__step-number {
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    color: currentColor;
-    font-family: var(--font-serif);
-    font-size: 0.68rem;
-    font-style: italic;
-    font-weight: 600;
-    opacity: 0.58;
-    transform: translateX(-50%);
+    display: none;
 }
 
 .service-process__step strong {
@@ -1157,6 +1168,10 @@
 @media (prefers-reduced-motion: reduce) {
     .service-process {
         background-attachment: scroll;
+    }
+
+    .service-process::after {
+        transform: none;
     }
 
     .service-process__step,

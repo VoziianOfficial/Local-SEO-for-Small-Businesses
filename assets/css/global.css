@@ -1889,6 +1889,7 @@ h3 {
 }
 
 .duo-card__index {
+  display: none;
   color: var(--color-accent-deep);
   font-size: 0.7rem;
   font-weight: 800;
