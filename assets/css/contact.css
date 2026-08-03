@@ -173,7 +173,7 @@
     padding-block: clamp(42px, 5.5vw, 68px);
 
     background-color: var(--color-white);
-    background-image: url("../images/about-parallax-workspace.png");
+    background-image: url("../images/about-parallax-workspace.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

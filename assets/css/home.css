@@ -867,7 +867,7 @@
 .insight-switcher__media {
   position: relative;
   min-height: clamp(180px, 24vw, 300px);
-  background-image: url("../images/card-2.jpg");
+  background-image: url("../images/card-2.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1710,7 +1710,7 @@
   overflow: hidden;
   padding-block: clamp(58px, 7vw, 96px);
   background-color: var(--color-black);
-  background-image: url("../images/card-1.jpg");
+  background-image: url("../images/card-1.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1922,13 +1922,13 @@
 
 .seo-split-feature__photo--primary {
   min-height: clamp(430px, 50vw, 620px);
-  --seo-photo: url("../images/card-6.jpg");
+  --seo-photo: url("../images/card-6.webp");
 }
 
 .seo-split-feature__photo--secondary {
   min-height: clamp(260px, 30vw, 390px);
   margin-top: 28px;
-  --seo-photo: url("../images/card-7.jpg");
+  --seo-photo: url("../images/card-7.webp");
 }
 
 .seo-split-feature__content-col {

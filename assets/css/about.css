@@ -65,11 +65,11 @@
 }
 
 .parallax-panel--01 {
-    background-image: url("../images/about-parallax-storefront.png");
+    background-image: url("../images/about-parallax-storefront.webp");
 }
 
 .parallax-panel--02 {
-    background-image: url("../images/about-parallax-workspace.png");
+    background-image: url("../images/about-parallax-workspace.webp");
 }
 
 .parallax-panel__label {
