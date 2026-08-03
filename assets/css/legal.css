@@ -1,5 +1,17 @@
+.site-shell,
+.site-shell main {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.section,
+.container {
+    min-width: 0;
+}
+
 .legal-hero .page-hero__title {
     max-width: 1000px;
+    overflow-wrap: anywhere;
 }
 
 .legal-hero {
@@ -16,11 +28,17 @@
     grid-template-columns: minmax(220px, .35fr) minmax(0, 1.65fr);
     gap: clamp(50px, 8vw, 120px);
     align-items: start;
+    min-width: 0;
+    max-width: min(calc(100% - (2 * var(--page-gutter)), var(--container)));
+    overflow-x: clip;
 }
 
 .legal-nav {
     position: sticky;
     top: 42px;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 24px 0;
     border-top: 1px solid var(--color-border-light);
     border-bottom: 1px solid var(--color-border-light);
@@ -37,6 +55,7 @@
 }
 
 .legal-nav ul {
+    max-width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -50,7 +69,9 @@
     color: var(--color-muted);
     font-size: .8rem;
     font-weight: 700;
+    overflow-wrap: normal;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .legal-nav a::before {
@@ -74,7 +95,25 @@
 }
 
 .legal-content {
+    min-width: 0;
+    width: 100%;
     max-width: 900px;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.legal-content *,
+.legal-intro,
+.legal-note {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.legal-content img,
+.legal-content svg,
+.legal-content table,
+.legal-content iframe {
+    max-width: 100%;
 }
 
 .legal-intro {
@@ -119,14 +158,31 @@
 }
 
 .legal-content a {
+    overflow-wrap: anywhere;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+}
+
+.legal-content code {
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .legal-note {
     padding: 24px;
     border-left: 3px solid var(--color-accent-deep);
     background: var(--color-mist);
+}
+
+.legal-content .button,
+.page-cta .button {
+    min-width: 0;
+}
+
+.legal-content .button__label,
+.page-cta .button__label {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .legal-note strong {
@@ -151,30 +207,46 @@
     .legal-layout {
         grid-template-columns: 1fr;
         gap: 34px;
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        margin-inline: auto;
+        overflow: visible;
     }
 
     .legal-nav {
         position: sticky;
         top: var(--mobile-header-height);
         z-index: 5;
-        margin-inline: calc(-1 * var(--page-gutter));
-        padding: 14px var(--page-gutter);
+        width: 100%;
+        max-width: 100%;
+        margin-inline: 0;
+        padding: 14px 0;
         border-top: 1px solid var(--color-border-light);
         border-bottom: 1px solid var(--color-border-light);
         background: rgba(245, 244, 239, .96);
         backdrop-filter: blur(14px);
+        overflow: hidden;
     }
 
     .legal-nav ul {
         display: flex;
+        width: 100%;
+        max-width: 100%;
         gap: 8px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x proximity;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .legal-nav ul::-webkit-scrollbar {
+        display: none;
     }
 
     .legal-nav a {
         min-width: max-content;
+        max-width: calc(100vw - 48px);
         min-height: 38px;
         padding: 9px 14px;
         border: 1px solid var(--color-border-light);
@@ -189,6 +261,8 @@
 
     .legal-content {
         max-width: none;
+        width: 100%;
+        overflow-x: clip;
     }
 
     .legal-intro {
@@ -199,6 +273,12 @@
     .legal-content section {
         scroll-margin-top: calc(var(--mobile-header-height) + 76px);
         padding: 40px 0;
+        overflow-x: clip;
+    }
+
+    .legal-content .page-cta__actions,
+    .legal-content .button-row {
+        min-width: 0;
     }
 }
 
@@ -217,12 +297,13 @@
     }
 
     .legal-layout {
+        width: calc(100% - 28px);
+        max-width: calc(100% - 28px);
         gap: 24px;
     }
 
     .legal-nav {
-        margin-inline: -22px;
-        padding: 12px 22px;
+        padding: 12px 0;
         text-align: center;
     }
 
@@ -252,6 +333,11 @@
     .legal-content li {
         font-size: .94rem;
         line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .legal-content section {
+        padding: 30px 0;
     }
 
     .legal-content ul,
@@ -268,5 +354,25 @@
 
     .legal-note {
         padding: 18px;
+    }
+
+    .legal-layout + .page-cta,
+    .page-cta {
+        overflow-x: clip;
+    }
+
+    .page-cta .container {
+        width: calc(100% - 28px);
+        max-width: calc(100% - 28px);
+    }
+
+    .page-cta__card {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 18px;
+    }
+
+    .page-cta__actions {
+        min-width: 0;
     }
 }
