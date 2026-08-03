@@ -54,6 +54,14 @@
     padding-block: clamp(43px, 5.5vw, 85px);
 }
 
+.service-values .work-statement__bg {
+    inset: -12% 0;
+    background-position: center;
+    background-size: cover;
+    transform: translate3d(0, var(--parallax-y, 0), 0) scale(1.08);
+    will-change: transform;
+}
+
 .pillar-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

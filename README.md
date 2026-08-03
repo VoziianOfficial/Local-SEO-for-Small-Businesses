@@ -36,7 +36,7 @@ No phone number is used anywhere in the project.
 
 ## Images
 
-The site intentionally uses only `assets/images/placeholder.svg`. Every image slot includes an adjacent HTML comment with a recommended future filename. Add final licensed photographs to the existing `assets/images` directory, update the corresponding `src` values, and preserve meaningful `alt`, `width`, `height`, `loading`, and `decoding` attributes.
+The site uses real files from `assets/images`. Every image slot includes an adjacent HTML comment with a recommended future filename. Add final licensed photographs to the existing `assets/images` directory, update the corresponding `src` values, and preserve meaningful `alt`, `width`, `height`, `loading`, and `decoding` attributes.
 
 ## Contact form
 

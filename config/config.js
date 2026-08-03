@@ -4,9 +4,9 @@ window.SITE_CONFIG = {
     "legalName": "Nearloom Local Ltd.",
     "tagline": "Clearer local visibility for growing businesses.",
     "studioLabel": "Local Search Studio",
-    "logoLight": "assets/images/placeholder.svg",
-    "logoDark": "assets/images/placeholder.svg",
-    "favicon": "assets/images/placeholder.svg"
+    "logoLight": "assets/images/favicon.svg",
+    "logoDark": "assets/images/favicon.svg",
+    "favicon": "assets/images/favicon.svg"
   },
   "contact": {
     "recipientEmail": "hello@nearloomlocal.com",
