@@ -23,7 +23,7 @@
 }
 
 .advertise-section {
-    padding-block: clamp(70px, 9vw, 120px);
+    padding-block: clamp(35px, 4.5vw, 40px);
 }
 
 .advertise-card {

@@ -415,82 +415,8 @@
 }
 
 /* =========================================================
-   WORK STATEMENT / CTA / SHOWCASE SWIPER
+   WORK CTA / SHOWCASE SWIPER
 ========================================================= */
-
-.work-statement {
-    position: relative;
-    display: grid;
-    min-height: min(56svh, 520px);
-    place-items: center;
-    padding-block: clamp(70px, 9vw, 120px);
-    isolation: isolate;
-    overflow: hidden;
-    text-align: center;
-    background: var(--color-black);
-}
-
-.work-statement__bg {
-    position: absolute;
-    inset: -9% 0;
-    z-index: -2;
-    background-image: url("../images/hero-1.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    transform: translate3d(0, var(--parallax-y, 0), 0) scale(1.06);
-    will-change: transform;
-}
-
-.work-statement::before {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: rgba(8, 10, 13, .8);
-    content: "";
-    pointer-events: none;
-}
-
-.work-statement__inner {
-    display: grid;
-    max-width: 760px;
-    justify-items: center;
-}
-
-.work-statement__mark {
-    display: grid;
-    width: 60px;
-    height: 60px;
-    margin-bottom: 22px;
-    place-items: center;
-    border-radius: 50%;
-    background: var(--color-accent);
-    color: var(--color-black);
-}
-
-.work-statement__mark svg {
-    width: 26px;
-    height: 26px;
-}
-
-.work-statement__eyebrow {
-    justify-content: center;
-    color: var(--color-accent);
-}
-
-.work-statement__title {
-    color: var(--color-white);
-    font-size: clamp(2rem, 4vw, 3.4rem);
-}
-
-.work-statement__text {
-    max-width: 620px;
-    margin: 22px 0 0;
-    color: var(--color-muted-dark);
-    font-size: clamp(1.02rem, 1.3vw, 1.2rem);
-    line-height: 1.7;
-}
 
 .work-cta {
     padding-block: clamp(28px, 3.2vw, 40px);
@@ -520,11 +446,6 @@
 
     .work-cta__button {
         justify-content: center;
-    }
-
-    .work-statement__mark {
-        width: 52px;
-        height: 52px;
     }
 }
 
