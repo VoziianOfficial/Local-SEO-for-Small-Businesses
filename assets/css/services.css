@@ -50,6 +50,10 @@
     padding-block: clamp(50px, 6vw, 86px);
 }
 
+.service-deck {
+    padding-block: clamp(43px, 5.5vw, 85px);
+}
+
 .pillar-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

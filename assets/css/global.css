@@ -479,7 +479,7 @@ h3 {
   inset: 0;
   z-index: -2;
   background-color: var(--color-mist);
-  background-image: var(--service-photo);
+  background-image: inherit;
   background-position: center;
   background-size: cover;
   opacity: 0.72;
