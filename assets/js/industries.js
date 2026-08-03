@@ -45,7 +45,7 @@
       loop: true,
       speed: 750,
       spaceBetween: 18,
-      slidesPerView: 1.15,
+      slidesPerView: 1,
       grabCursor: true,
       simulateTouch: true,
       allowTouchMove: true,
@@ -71,10 +71,11 @@
         enabled: true
       },
       breakpoints: {
-        560: { slidesPerView: 1.6, spaceBetween: 18 },
-        768: { slidesPerView: 2.2, spaceBetween: 20 },
-        1024: { slidesPerView: 2.8, spaceBetween: 22 },
-        1280: { slidesPerView: 3.4, spaceBetween: 24 }
+        0: { slidesPerView: 1, spaceBetween: 18 },
+        560: { slidesPerView: 1, spaceBetween: 18 },
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 22 },
+        1280: { slidesPerView: 3, spaceBetween: 24 }
       }
     });
     if (workSwiper.autoplay && typeof workSwiper.autoplay.start === "function") workSwiper.autoplay.start();

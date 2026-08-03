@@ -482,7 +482,7 @@
 }
 
 .service-faq {
-    padding-block: clamp(100px, 12vw, 170px);
+    padding-block: clamp(50px, 6vw, 85px);
 }
 
 .service-faq__layout {

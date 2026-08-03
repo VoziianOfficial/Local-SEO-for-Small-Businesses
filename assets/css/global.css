@@ -436,7 +436,7 @@ h3 {
 }
 
 .work-showcase__slider {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .work-showcase .swiper-wrapper {
@@ -558,6 +558,7 @@ h3 {
   --deck-blue-deep: var(--color-signal-blue-deep);
   --deck-blue-soft: var(--color-signal-blue-soft);
   --deck-ease: cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  padding-block: clamp(43px, 5.5vw, 85px);
   overflow: hidden;
   background: var(--color-white);
   color: var(--color-text);
@@ -2331,7 +2332,7 @@ h3 {
   }
 
   .service-deck {
-    padding-block: 50px;
+    padding-block: 25px;
   }
 
   .service-deck__shell {

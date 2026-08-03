@@ -479,6 +479,10 @@
     color: var(--color-muted);
 }
 
+.contact-faq {
+    padding-block: clamp(43px, 5.5vw, 85px);
+}
+
 .contact-faq__layout {
     display: grid;
     grid-template-columns: minmax(260px, .65fr) minmax(0, 1.35fr);

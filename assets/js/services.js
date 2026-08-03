@@ -25,7 +25,7 @@
         loop: true,
         speed: 750,
         spaceBetween: 18,
-        slidesPerView: 1.15,
+        slidesPerView: 1,
         grabCursor: true,
         simulateTouch: true,
         allowTouchMove: true,
@@ -56,20 +56,24 @@
         },
 
         breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 18
+          },
           560: {
-            slidesPerView: 1.6,
+            slidesPerView: 1,
             spaceBetween: 18
           },
           768: {
-            slidesPerView: 2.2,
+            slidesPerView: 2,
             spaceBetween: 20
           },
           1024: {
-            slidesPerView: 2.8,
+            slidesPerView: 3,
             spaceBetween: 22
           },
           1280: {
-            slidesPerView: 3.4,
+            slidesPerView: 3,
             spaceBetween: 24
           }
         }
