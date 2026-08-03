@@ -22,21 +22,26 @@
 
     if (!reviewsSwiperElement || typeof Swiper === "undefined") return;
 
-    new Swiper(reviewsSwiperElement, {
+    const reviewsSwiper = new Swiper(reviewsSwiperElement, {
       loop: true,
       speed: 700,
       spaceBetween: 18,
       slidesPerView: 1,
+      slidesPerGroup: 1,
       centeredSlides: false,
       grabCursor: true,
+      simulateTouch: true,
+      allowTouchMove: true,
+      touchEventsTarget: "container",
       watchOverflow: false,
+      loopAdditionalSlides: 2,
       observer: true,
       observeParents: true,
 
       autoplay: {
-        delay: 4200,
+        delay: 2600,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true
+        pauseOnMouseEnter: false
       },
 
       pagination: {
@@ -49,7 +54,20 @@
         prevEl: ".services-reviews__arrow--prev"
       },
 
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+
+      mousewheel: {
+        forceToAxis: true
+      },
+
       breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 18
+        },
         768: {
           slidesPerView: 2,
           spaceBetween: 20
@@ -64,6 +82,10 @@
         }
       }
     });
+
+    if (reviewsSwiper.autoplay && typeof reviewsSwiper.autoplay.start === "function") {
+      reviewsSwiper.autoplay.start();
+    }
   });
 
   function initServices() { if (document.documentElement.dataset.servicesReady === "true") return; document.documentElement.dataset.servicesReady = "true"; try { initScopeBuilder(); } catch (error) { console.error("Nearloom component failed: scope builder", error); } }
