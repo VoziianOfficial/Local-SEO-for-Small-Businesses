@@ -75,6 +75,8 @@
 }
 
 .advertise-card__cta-circle {
+    position: relative;
+    z-index: 1;
     display: grid;
     width: clamp(48px, 4vw, 58px);
     height: clamp(48px, 4vw, 58px);
@@ -87,9 +89,21 @@
     transition: transform 220ms ease, background-color 220ms ease;
 }
 
+.advertise-card__cta-circle svg,
+.advertise-card__cta-circle i {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: currentColor;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.1;
+}
+
 .advertise-card__cta:hover .advertise-card__cta-circle,
 .advertise-card__cta:focus-visible .advertise-card__cta-circle {
     background: var(--color-text-light);
+    color: var(--color-black);
     transform: scale(1.08) rotate(8deg);
 }
 

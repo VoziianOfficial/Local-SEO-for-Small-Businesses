@@ -84,6 +84,13 @@
   text-transform: uppercase;
 }
 
+.particle-hero__scroll svg,
+.particle-hero__scroll i {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.2;
+}
+
 .home-intro {
   padding-inline: var(--page-gutter);
 }
