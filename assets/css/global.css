@@ -405,6 +405,154 @@ h3 {
   cursor: grabbing;
 }
 
+.work-showcase {
+  --work-accent: var(--color-accent);
+  padding-block: clamp(60px, 7vw, 100px);
+  overflow: hidden;
+  background: var(--color-charcoal);
+}
+
+.work-showcase--signal {
+  --work-accent: var(--color-signal-blue);
+}
+
+.work-showcase__head {
+  display: grid;
+  justify-items: center;
+  margin-bottom: clamp(34px, 4vw, 54px);
+  text-align: center;
+}
+
+.work-showcase__eyebrow {
+  justify-content: center;
+}
+
+.work-showcase.section--dark .work-showcase__eyebrow {
+  color: var(--work-accent);
+}
+
+.work-showcase__title {
+  color: var(--color-white);
+}
+
+.work-showcase__slider {
+  overflow: visible;
+}
+
+.work-showcase .swiper-wrapper {
+  align-items: stretch;
+}
+
+.work-card {
+  position: relative;
+  display: block;
+  height: clamp(300px, 34vw, 420px);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.work-card__media {
+  position: absolute;
+  inset: 0;
+}
+
+.work-card__media img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1) contrast(1.02);
+  transition: filter 480ms ease, transform 600ms ease;
+}
+
+.work-card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 10, 13, 0) 45%, rgba(8, 10, 13, 0.86) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.work-card:hover .work-card__media img,
+.work-card:focus-visible .work-card__media img,
+.work-card:active .work-card__media img {
+  filter: grayscale(0);
+  transform: scale(1.06);
+}
+
+.work-card__label {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 1;
+  color: var(--color-white);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  font-weight: 800;
+}
+
+.work-card__arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--work-accent);
+  color: var(--color-black);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.work-card:hover .work-card__arrow,
+.work-card:focus-visible .work-card__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-card__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.work-showcase__controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.work-showcase__arrow {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.work-showcase__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.work-showcase__arrow:hover {
+  border-color: var(--work-accent);
+  background: var(--work-accent);
+  color: var(--color-black);
+}
+
 .service-deck {
   --deck-blue: var(--color-signal-blue);
   --deck-blue-deep: var(--color-signal-blue-deep);

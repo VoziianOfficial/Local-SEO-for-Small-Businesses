@@ -37,6 +37,48 @@
       }
     });
   }
-  function initIndustries() { if (document.documentElement.dataset.industriesReady === "true") return; document.documentElement.dataset.industriesReady = "true"; try { initMomentMosaic(); } catch (error) { console.error("Nearloom component failed: local moments", error); } try { initBusinessSwiper(); } catch (error) { console.error("Nearloom component failed: business swiper", error); } }
+  function initWorkShowcase() {
+    var element = document.querySelector("[data-work-swiper]");
+    if (!element || typeof Swiper === "undefined" || element.dataset.swiperReady === "true") return;
+    element.dataset.swiperReady = "true";
+    var workSwiper = new Swiper(element, {
+      loop: true,
+      speed: 750,
+      spaceBetween: 18,
+      slidesPerView: 1.15,
+      grabCursor: true,
+      simulateTouch: true,
+      allowTouchMove: true,
+      touchEventsTarget: "container",
+      watchOverflow: false,
+      loopAdditionalSlides: 2,
+      observer: true,
+      observeParents: true,
+      autoplay: {
+        delay: 2200,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      navigation: {
+        nextEl: ".work-showcase__arrow--next",
+        prevEl: ".work-showcase__arrow--prev"
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+      a11y: {
+        enabled: true
+      },
+      breakpoints: {
+        560: { slidesPerView: 1.6, spaceBetween: 18 },
+        768: { slidesPerView: 2.2, spaceBetween: 20 },
+        1024: { slidesPerView: 2.8, spaceBetween: 22 },
+        1280: { slidesPerView: 3.4, spaceBetween: 24 }
+      }
+    });
+    if (workSwiper.autoplay && typeof workSwiper.autoplay.start === "function") workSwiper.autoplay.start();
+  }
+  function initIndustries() { if (document.documentElement.dataset.industriesReady === "true") return; document.documentElement.dataset.industriesReady = "true"; try { initMomentMosaic(); } catch (error) { console.error("Nearloom component failed: local moments", error); } try { initBusinessSwiper(); } catch (error) { console.error("Nearloom component failed: business swiper", error); } try { initWorkShowcase(); } catch (error) { console.error("Nearloom component failed: work showcase", error); } }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initIndustries); else initIndustries();
 }());
